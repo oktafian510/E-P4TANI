@@ -16,9 +16,11 @@ class faqController extends Controller
     public function index()
     {
         //
+        $title = 'FAQ';
         $datas = faq::all();
         return view('admin.faq.index', compact(
-            'datas'
+            'datas',
+            'title'
         ));
     }
 
