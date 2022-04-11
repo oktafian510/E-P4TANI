@@ -31,9 +31,15 @@ class faqController extends Controller
     {
         //
         $model = new faq;
-        return view('admin.faq.create', compact(
-            'model'
-        ));
+        $model->question = "okta3";
+        $model->answer = "saya pintar";
+        if ($model->save())
+            return "berhasil";
+        else
+            return "gagal";
+        // return view('admin.faq.create', compact(
+        //     'model'
+        // ));
     }
 
     /**

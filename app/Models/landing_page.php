@@ -8,5 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class landing_page extends Model
 {
     use HasFactory;
-    protected $table = "landing_page";
 }
