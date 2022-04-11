@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\faq;
+use App\Models\poster;
 use Illuminate\Http\Request;
 
-class faqController extends Controller
+class posterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class faqController extends Controller
     public function index()
     {
         //
-        $title = 'FAQ';
+        $title = 'POSTER';
         $menu = 'page';
-        $datas = faq::all();
-        return view('admin.faq.index', compact(
+        $datas = poster::all();
+        return view('admin.poster.index', compact(
             'datas',
             'title',
             'menu'
@@ -34,21 +34,14 @@ class faqController extends Controller
     public function create()
     {
         //
-        $title = 'FAQ';
+        $title = 'POSTER';
         $menu = 'page';
-        $model = new faq;
-        return view('admin.faq.create', compact(
+        $model = new poster;
+        return view('admin.poster.create', compact(
             'model',
             'title',
             'menu'
         ));
-        // $model->question = "okta1";
-        // $model->answer = "saya pintar";
-        // if ($model->save())
-        //     return "berhasil";
-        // else
-        //     return "gagal";
-
     }
 
     /**
@@ -60,11 +53,12 @@ class faqController extends Controller
     public function store(Request $request)
     {
         //
-        $model = new faq;
-        $model->question = $request->question;
-        $model->answer = $request->answer;
+        $model = new poster;
+        $model->title = $request->title;
+        $model->description = $request->description;
+        $model->image = $request->image;
         $model->save();
-        return redirect('adminFaq');
+        return redirect('adminPoster');
     }
 
     /**
@@ -87,10 +81,10 @@ class faqController extends Controller
     public function edit($id)
     {
         //
-        $title = "FAQ";
+        $title = "POSTER";
         $menu = "page";
-        $model = faq::find($id);
-        return view('admin.faq.update', compact(
+        $model = poster::find($id);
+        return view('admin.poster.update', compact(
             'model',
             'title',
             'menu'
@@ -107,11 +101,12 @@ class faqController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $model = faq::find($id);
-        $model->question = $request->question;
-        $model->answer = $request->answer;
+        $model = poster::find($id);
+        $model->title = $request->title;
+        $model->description = $request->description;
+        $model->image = $request->image;
         $model->save();
-        return redirect('adminFaq');
+        return redirect('adminPoster');
     }
 
     /**
@@ -123,8 +118,8 @@ class faqController extends Controller
     public function destroy($id)
     {
         //
-        $model = faq::find($id);
+        $model = poster::find($id);
         $model->delete();
-        return redirect('adminFaq');
+        return redirect('adminPoster');
     }
 }

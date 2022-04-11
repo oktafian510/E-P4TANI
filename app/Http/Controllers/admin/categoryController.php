@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\faq;
+use App\Models\categorie;
 use Illuminate\Http\Request;
 
-class faqController extends Controller
+class categoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class faqController extends Controller
     public function index()
     {
         //
-        $title = 'FAQ';
-        $menu = 'page';
-        $datas = faq::all();
-        return view('admin.faq.index', compact(
+        $title = 'CATEGORY';
+        $menu = 'Product';
+        $datas = categorie::all();
+        return view('admin.category.index', compact(
             'datas',
             'title',
             'menu'
@@ -34,16 +34,16 @@ class faqController extends Controller
     public function create()
     {
         //
-        $title = 'FAQ';
-        $menu = 'page';
-        $model = new faq;
-        return view('admin.faq.create', compact(
+        $title = 'CATEGORY';
+        $menu = 'Product';
+        $model = new categorie;
+        return view('admin.category.create', compact(
             'model',
             'title',
             'menu'
         ));
-        // $model->question = "okta1";
-        // $model->answer = "saya pintar";
+        // $model->name = "okta1";
+        // $model->description = "saya pintar";
         // if ($model->save())
         //     return "berhasil";
         // else
@@ -60,11 +60,11 @@ class faqController extends Controller
     public function store(Request $request)
     {
         //
-        $model = new faq;
-        $model->question = $request->question;
-        $model->answer = $request->answer;
+        $model = new categorie;
+        $model->name = $request->name;
+        $model->description = $request->description;
         $model->save();
-        return redirect('adminFaq');
+        return redirect('adminCategory');
     }
 
     /**
@@ -89,8 +89,8 @@ class faqController extends Controller
         //
         $title = "FAQ";
         $menu = "page";
-        $model = faq::find($id);
-        return view('admin.faq.update', compact(
+        $model = categorie::find($id);
+        return view('admin.category.update', compact(
             'model',
             'title',
             'menu'
@@ -107,11 +107,11 @@ class faqController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $model = faq::find($id);
-        $model->question = $request->question;
-        $model->answer = $request->answer;
+        $model = categorie::find($id);
+        $model->name = $request->name;
+        $model->description = $request->description;
         $model->save();
-        return redirect('adminFaq');
+        return redirect('adminCategory');
     }
 
     /**
@@ -123,8 +123,8 @@ class faqController extends Controller
     public function destroy($id)
     {
         //
-        $model = faq::find($id);
+        $model = categorie::find($id);
         $model->delete();
-        return redirect('adminFaq');
+        return redirect('adminCategory');
     }
 }

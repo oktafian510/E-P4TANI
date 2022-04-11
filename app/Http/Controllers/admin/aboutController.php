@@ -16,9 +16,13 @@ class aboutController extends Controller
     public function index()
     {
         //
+        $title = 'ABOUT';
+        $menu = 'page';
         $datas = about::all();
         return view('admin.about.index', compact(
-            'datas'
+            'datas',
+            'title',
+            'menu'
         ));
     }
 
@@ -30,6 +34,21 @@ class aboutController extends Controller
     public function create()
     {
         //
+        $title = 'ABOUT';
+        $menu = 'page';
+        $model = new about;
+        return view('admin.about.create', compact(
+            'model',
+            'title',
+            'menu'
+        ));
+        // $model->company = "okta1";
+        // $model->description = "saya pintar";
+        // if ($model->save())
+        //     return "berhasil";
+        // else
+        //     return "gagal";
+
     }
 
     /**
@@ -41,6 +60,17 @@ class aboutController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new about;
+        $model->company = $request->company;
+        $model->description = $request->description;
+        $model->email = $request->email;
+        $model->fb = $request->fb;
+        $model->hp = $request->hp;
+        $model->ig = $request->ig;
+        $model->yt = $request->yt;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('adminAbout');
     }
 
     /**
@@ -63,6 +93,14 @@ class aboutController extends Controller
     public function edit($id)
     {
         //
+        $title = "FAQ";
+        $menu = "page";
+        $model = about::find($id);
+        return view('admin.about.update', compact(
+            'model',
+            'title',
+            'menu'
+        ));
     }
 
     /**
@@ -75,6 +113,17 @@ class aboutController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $model = about::find($id);
+        $model->company = $request->company;
+        $model->description = $request->description;
+        $model->email = $request->email;
+        $model->fb = $request->fb;
+        $model->hp = $request->hp;
+        $model->ig = $request->ig;
+        $model->yt = $request->yt;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('adminAbout');
     }
 
     /**
@@ -86,5 +135,8 @@ class aboutController extends Controller
     public function destroy($id)
     {
         //
+        $model = about::find($id);
+        $model->delete();
+        return redirect('adminAbout');
     }
 }

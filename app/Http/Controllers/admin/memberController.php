@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\member;
 use Illuminate\Http\Request;
 
-class landingPageController extends Controller
+class memberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +16,14 @@ class landingPageController extends Controller
     public function index()
     {
         //
+        $title = 'MEMBER';
+        $menu = 'page';
+        $datas = member::all();
+        return view('admin.member.index', compact(
+            'datas',
+            'title',
+            'menu'
+        ));
     }
 
     /**
@@ -25,6 +34,14 @@ class landingPageController extends Controller
     public function create()
     {
         //
+        $title = 'MEMBER';
+        $menu = 'page';
+        $model = new member;
+        return view('admin.member.create', compact(
+            'model',
+            'title',
+            'menu'
+        ));
     }
 
     /**
@@ -36,6 +53,13 @@ class landingPageController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new member;
+        $model->name = $request->name;
+        $model->description = $request->description;
+        $model->category = $request->category;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('adminMember');
     }
 
     /**
@@ -58,6 +82,14 @@ class landingPageController extends Controller
     public function edit($id)
     {
         //
+        $title = "ARTICLE";
+        $menu = "page";
+        $model = member::find($id);
+        return view('admin.member.update', compact(
+            'model',
+            'title',
+            'menu'
+        ));
     }
 
     /**
@@ -70,6 +102,13 @@ class landingPageController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $model = member::find($id);
+        $model->name = $request->name;
+        $model->description = $request->description;
+        $model->category = $request->category;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('adminMember');
     }
 
     /**
@@ -81,5 +120,8 @@ class landingPageController extends Controller
     public function destroy($id)
     {
         //
+        $model = member::find($id);
+        $model->delete();
+        return redirect('adminMember');
     }
 }

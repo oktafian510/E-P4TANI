@@ -2,10 +2,15 @@
 
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\articleController;
+use App\Http\Controllers\admin\categoryController;
 use App\Http\Controllers\admin\faqController;
+use App\Http\Controllers\admin\memberController;
+use App\Http\Controllers\admin\posterController;
 use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
 use App\Http\Controllers\view\home;
+use App\Models\article;
+use App\Models\member;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +44,13 @@ Route::get('/', function () {
 
 
 Route::resource('adminFaq', faqController::class);
+Route::resource('adminPoster', posterController::class);
+Route::resource('adminArticle', articleController::class);
+Route::resource('adminAbout', aboutController::class);
+Route::resource('adminMember', memberController::class);
+Route::resource('adminCategory', categoryController::class);
+
+
 // Route::resource('adminAbout', aboutController::class);
 // Route::resource('adminArticle', articleController::class);
 // Route::get('/login', function () {

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLandingPagesTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateLandingPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_pages', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 100);
+        Schema::create('products', function (Blueprint $table) {
+            $table->string('code', 100)->unique();
+            $table->string('category', 100);
+            $table->string('nameProduct');
             $table->text('description');
             $table->string('image');
             $table->timestamps();
@@ -29,6 +30,6 @@ class CreateLandingPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('landing_pages');
+        Schema::dropIfExists('products');
     }
 }

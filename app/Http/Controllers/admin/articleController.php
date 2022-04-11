@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\article;
+use App\Models\categorie;
 use Illuminate\Http\Request;
 
 class articleController extends Controller
@@ -16,9 +17,13 @@ class articleController extends Controller
     public function index()
     {
         //
+        $title = 'ARTICLE';
+        $menu = 'page';
         $datas = article::all();
         return view('admin.article.index', compact(
-            'datas'
+            'datas',
+            'title',
+            'menu'
         ));
     }
 
@@ -30,6 +35,16 @@ class articleController extends Controller
     public function create()
     {
         //
+        $title = 'ARTICLE';
+        $menu = 'page';
+        $category = categorie::all();
+        $model = new article;
+        return view('admin.article.create', compact(
+            'model',
+            'title',
+            'category',
+            'menu'
+        ));
     }
 
     /**
@@ -41,6 +56,14 @@ class articleController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new article;
+        $model->title = $request->title;
+        $model->description = $request->description;
+        $model->writer = $request->writer;
+        $model->category = $request->category;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('adminArticle');
     }
 
     /**
@@ -63,6 +86,14 @@ class articleController extends Controller
     public function edit($id)
     {
         //
+        $title = "ARTICLE";
+        $menu = "page";
+        $model = article::find($id);
+        return view('admin.article.update', compact(
+            'model',
+            'title',
+            'menu'
+        ));
     }
 
     /**
@@ -75,6 +106,14 @@ class articleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $model = article::find($id);
+        $model->title = $request->title;
+        $model->description = $request->description;
+        $model->writer = $request->writer;
+        $model->category = $request->category;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('adminArticle');
     }
 
     /**
@@ -86,5 +125,8 @@ class articleController extends Controller
     public function destroy($id)
     {
         //
+        $model = article::find($id);
+        $model->delete();
+        return redirect('adminArticle');
     }
 }
