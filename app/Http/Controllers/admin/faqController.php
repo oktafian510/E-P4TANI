@@ -31,15 +31,16 @@ class faqController extends Controller
     {
         //
         $model = new faq;
-        $model->question = "okta3";
-        $model->answer = "saya pintar";
-        if ($model->save())
-            return "berhasil";
-        else
-            return "gagal";
-        // return view('admin.faq.create', compact(
-        //     'model'
-        // ));
+        return view('admin.faq.create', compact(
+            'model'
+        ));
+        // $model->question = "okta1";
+        // $model->answer = "saya pintar";
+        // if ($model->save())
+        //     return "berhasil";
+        // else
+        //     return "gagal";
+
     }
 
     /**
@@ -78,6 +79,10 @@ class faqController extends Controller
     public function edit($id)
     {
         //
+        $model = faq::find($id);
+        return view('admin.faq.update', compact(
+            'model'
+        ));
     }
 
     /**
@@ -90,6 +95,11 @@ class faqController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $model = faq::find($id);
+        $model->question = $request->question;
+        $model->answer = $request->answer;
+        $model->save();
+        return redirect('adminFaq');
     }
 
     /**
@@ -101,5 +111,8 @@ class faqController extends Controller
     public function destroy($id)
     {
         //
+        $model = faq::find($id);
+        $model->delete();
+        return redirect('adminFaq');
     }
 }

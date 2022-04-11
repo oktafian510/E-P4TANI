@@ -1,8 +1,6 @@
-{{-- @extends('backEnd.layouts.master') --}}
 @extends('admin.index')
 @section('conten')
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -27,7 +25,7 @@
       <div class="card">
         <div class="card-header">
                       
-          <h3 class="card-title">Daftar Q&A</h3>
+          <h3 class="card-title">TAMBAH Q&A</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -40,34 +38,17 @@
         </div>
         <div class="card-body">
 
-          {{-- Start creating your amazing application! --}}
-          <table class="table">
-              <tr>
-                  <th>id</th>
-                  <th>questions</th>
-                  <th>answer</th>
-                  <th>aksi</th>
-              </tr>
-
-              @foreach ($datas as $key=>$value)
-              <tr>
-                  <td>{{ $key+1 }}</td>
-                  <td>{{ $value->question }}</td>
-                  <td>{{ $value->answer }}</td>
-                  <td><a href="{{ url('adminFaq/'.$value->id.'/edit') }}">Update</a></td>
-                  <td>
-                    <form action="{{ url('adminFaq/'.$value->id) }}" method="POST">
-                      @csrf
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit">DELETE</button>
-                    </form>
-                  </td>
-              </tr>
-                  
-              @endforeach
-          </table>
-          <br>
-          <a href="{{ url('adminFaq/create') }}">Tambah</a>
+            <form action="{{ url('adminFaq/'.$model->id) }}" method="POST">
+                @csrf
+                <input type="hidden" name="_method" value="PATCH">
+                <input type="text" name="question" value="{{ $model->question }}" id="question">
+                <label for="question">question</label> <br>
+                <input type="text" name="answer" value="{{ $model->answer }}" id="answer">
+                <label for="answer">answer</label><br>
+                <button type="submit">SIMPAN</button>
+            
+            </form>
+            
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
@@ -80,6 +61,6 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+
 
 @endsection
