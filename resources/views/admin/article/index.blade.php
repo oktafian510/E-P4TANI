@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>ABOUT</h1>
+            <h1>Article</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="http://p4tani.test/">Home</a></li>
-              <li class="breadcrumb-item active">ABOUT</li>
+              <li class="breadcrumb-item active">Article</li>
             </ol>
           </div>
         </div>
@@ -27,7 +27,7 @@
       <div class="card">
         <div class="card-header">
                       
-          <h3 class="card-title">About Company</h3>
+          <h3 class="card-title">Article</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -42,21 +42,19 @@
 
           {{-- Start creating your amazing application! --}}
           <table class="table">
-              <tr>
-                  <th>ig</th>
-                  <th>hp</th>
-                  <th>yt</th>
-                  <th>fb</th>
+                <tr>
+                  <th>id</th>
+                  <th>title</th>
+                  <th>description</th>
+                  <th>image</th>
               </tr>
-
               @foreach ($datas as $key=>$value)
               <tr>
-                <td>{{ $value->ig  }}</td>
-                <td>{{ $value->hp  }}</td>
-                <td>{{ $value->yt  }}</td>
-                <td>{{ $value->fb  }}</td>
+                  <td>{{ $value->id  }}</td>
+                  <td>{{ $value->title  }}</td>
+                  <td>{{ $value->description  }}</td>
+                  <td>{{ $value->image  }}</td>
               </tr>
-                  
               @endforeach
           </table>
           <br>

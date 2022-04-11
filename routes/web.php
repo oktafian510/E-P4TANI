@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\aboutController;
+use App\Http\Controllers\admin\articleController;
 use App\Http\Controllers\admin\faqController;
 use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
@@ -37,6 +39,8 @@ Route::post('/register', [registerController::class, 'store']);
 
 
 Route::resource('adminFaq', faqController::class);
+Route::resource('adminAbout', aboutController::class);
+Route::resource('adminArticle', articleController::class);
 // Route::get('/login', function () {
 //     return view('login.index');
 // });
