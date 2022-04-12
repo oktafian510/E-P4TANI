@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\categoryController;
 use App\Http\Controllers\admin\faqController;
 use App\Http\Controllers\admin\memberController;
 use App\Http\Controllers\admin\posterController;
+use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
 use App\Http\Controllers\view\home;
@@ -49,6 +50,7 @@ Route::resource('adminArticle', articleController::class);
 Route::resource('adminAbout', aboutController::class);
 Route::resource('adminMember', memberController::class);
 Route::resource('adminCategory', categoryController::class);
+Route::resource('adminProduct', productController::class);
 
 
 // Route::resource('adminAbout', aboutController::class);

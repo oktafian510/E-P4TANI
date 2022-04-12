@@ -228,6 +228,12 @@
                     <p>Category</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="/adminProduct" class="nav-link {{ ($title === "PRODUCTS") ? 'active' : ' ' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Products</p>
+                  </a>
+                </li>
               </ul>
             </li>
        
