@@ -50,7 +50,7 @@
                 <ul>
                   <li><a class="" href="#">About</a></li>
                   <li><a class="" href="#">FAQ</a></li>
-                  <li><a class="" href="#">Contact</a></li>
+                  <li><a class="" href="#">Member</a></li>
                 </ul>
               </li>
               <li><a class="nav-link scrollto " href="Signup">Signup</a></li>
