@@ -10,6 +10,7 @@ class loginController extends Controller
     //
     public function index()
     {
+
         return view('akun.login');
     }
 }

@@ -19,9 +19,9 @@
   <div class="login-logo">
     <a href="../../index2.html"><b>Admin</b>LTE</a>
   </div>
-
-  @yield('formAkun')
-
+{{-- konten --}}
+  @yield('rexy')
+{{-- batas konten --}}
 <!-- jQuery -->
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->

@@ -1,6 +1,7 @@
 @extends('akun.layout')
-@section('formAkun')
+@section('rexy')
   <!-- /.login-logo -->
+  
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Please Log in</p>
