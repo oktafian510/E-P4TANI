@@ -7,9 +7,10 @@ use App\Http\Controllers\admin\faqController;
 use App\Http\Controllers\admin\memberController;
 use App\Http\Controllers\admin\posterController;
 use App\Http\Controllers\admin\productController;
+use App\Http\Controllers\admin\stokController;
 use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
-use App\Http\Controllers\view\home;
+use App\Http\Controllers\view\viewController;
 use App\Models\article;
 use App\Models\member;
 use Illuminate\Support\Facades\Route;
@@ -29,8 +30,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// route::get('/home', [home::class, 'home']);
-// route::get('/article', [home::class, 'article']);
+// route::get('/home', [viewController::class, 'home']);
+route::get('/', [viewController::class, 'home']);
+route::get('/article', [viewController::class, 'article']);
+route::get('/product', [viewController::class, 'product']);
 // route::get('/catalog', [home::class, 'catalog']);
 // route::get('/faq', [home::class, 'faq']);
 // route::get('/about', [home::class, 'about']);
@@ -51,6 +54,7 @@ Route::resource('adminAbout', aboutController::class);
 Route::resource('adminMember', memberController::class);
 Route::resource('adminCategory', categoryController::class);
 Route::resource('adminProduct', productController::class);
+Route::resource('adminStock', stokController::class);
 
 
 // Route::resource('adminAbout', aboutController::class);

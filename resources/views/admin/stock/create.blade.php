@@ -1,26 +1,25 @@
 @extends('admin.index')
 @section('conten')
         <div class="card-body">
-            <form action="{{ url('adminProduct') }}" method="POST">
+            <form action="{{ url('adminStock') }}" method="POST">
                 @csrf
-                <input type="text" name="code"  id="code">
-                <label for="code">Code</label> <br>
+                
                 <div class="form-group">
-                    <label for="category">Category</label>
-                    <select class="form-control" name="category" id="category" style="width: 100px">
-                        @foreach ($category as $key=>$value)
-                        <option>{{ $value->name }}</option>
+                    <label for="code">Code</label>
+                    <select class="form-control" name="code" id="code" style="width: 100px">
+                        @foreach ($code as $key=>$value)
+                        <option>{{ $value->code }}</option>
                         @endforeach
                     </select>
                 </div>
-                <input type="text" name="nameProduct"  id="nameProduct">
-                <label for="nameProduct">Name Product</label><br>
-                <input type="text" name="description"  id="description">
-                <label for="description">description</label><br>
+                <input type="text" name="size"  id="size">
+                <label for="size">Size</label><br>
+                <input type="text" name="stock"  id="stock">
+                <label for="stock">stock</label><br>
                 {{-- <input type="text" name="category"  id="category">
                 <label for="category">category</label><br> --}}
-                <input type="text" name="image" id="image">
-                <label for="image">image</label><br>
+                <input type="text" name="price" id="price">
+                <label for="price">price</label><br>
                 
                 <button type="submit">SIMPAN</button>
             </form>

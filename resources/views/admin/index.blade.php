@@ -234,6 +234,12 @@
                     <p>Products</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="/adminStock" class="nav-link {{ ($title === "STOCKS") ? 'active' : ' ' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>STOCKS</p>
+                  </a>
+                </li>
               </ul>
             </li>
        

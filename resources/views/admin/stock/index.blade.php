@@ -10,10 +10,9 @@
               <tr>
                   <th>Id</th>
                   <th>Code</th>
-                  <th>Category</th>
-                  <th>nama Product</th>
-                  <th>description</th>
-                  <th>image</th>
+                  <th>Size</th>
+                  <th>Stock</th>
+                  <th>Price</th>
                   <th>aksi</th>
               </tr>
 
@@ -21,13 +20,12 @@
               <tr>
                   <td>{{ $key+1 }}</td>
                   <td>{{ $value->code }}</td>
-                  <td>{{ $value->category }}</td>
-                  <td>{{ $value->nameProduct }}</td>
-                  <td>{{ $value->description }}</td>
-                  <td>{{ $value->image }}</td>
+                  <td>{{ $value->size }}</td>
+                  <td>{{ $value->stock }}</td>
+                  <td>{{ $value->price }}</td>
                   <td>
-                    <a href="{{ url('adminProduct/'.$value->id.'/edit') }}">Update</a>
-                    <form action="{{ url('adminProduct/'.$value->id) }}" method="POST">
+                    <a href="{{ url('adminStock/'.$value->id.'/edit') }}">Update</a>
+                    <form action="{{ url('adminStock/'.$value->id) }}" method="POST">
                       @csrf
                       <input type="hidden" name="_method" value="DELETE">
                       <button type="submit">DELETE</button>
@@ -38,7 +36,7 @@
               @endforeach
           </table>
           <br>
-          <a href="{{ url('adminProduct/create') }}">Tambah</a>
+          <a href="{{ url('adminStock/create') }}">Tambah</a>
         </div>
         
 
