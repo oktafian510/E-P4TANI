@@ -1,5 +1,5 @@
 @extends('akun.layout')
-@section('rexy')
+@section('conten')
   <!-- /.login-logo -->
   
   <div class="card">

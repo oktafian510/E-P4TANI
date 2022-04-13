@@ -20,7 +20,7 @@
     <a href="../../index2.html"><b>Admin</b>LTE</a>
   </div>
 {{-- konten --}}
-  @yield('rexy')
+  @yield('conten')
 {{-- batas konten --}}
 <!-- jQuery -->
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
