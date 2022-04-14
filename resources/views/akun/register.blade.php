@@ -4,41 +4,59 @@
   <div class="card-body register-card-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="/register" method="POST">
+    <form action="{{ url('register') }}" method="POST">
       @csrf
       <div class="input-group mb-3">
-        <input  type="text" name="name" class="form-control" placeholder="Full name">
+        <input  type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Full name" required value="{{ old('name') }}" >
         <div class="input-group-append">
           <div class="input-group-text">
             <span class="fas fa-user"></span>
           </div>
         </div>
-      </div>
-      <div class="input-group mb-3">
-        <input type="tel"  name="hp" class="form-control" placeholder="No Handphone">
-        <div class="input-group-append">
-          <div class="input-group-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
-              <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/>
-            </svg>
-          </div>
+        @error('name')
+        <div class="invalid-feedback">
+          {{ $message }}
         </div>
+        @enderror
       </div>
       <div class="input-group mb-3">
-        <input  type="text" name="username" class="form-control" placeholder="Username">
+        <input type="email"  name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your email" required value="{{ old('email') }}" >
         <div class="input-group-append">
           <div class="input-group-text">
             <span class="fas fa-envelope"></span>
           </div>
         </div>
+        @error('email')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
       </div>
       <div class="input-group mb-3">
-        <input  type="password" name="password" class="form-control" placeholder="Password">
+        <input  type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" required value="{{ old('username') }}" >
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <span class="fas fa-user"></span>
+          </div>
+        </div>
+        @error('username')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
+      </div>
+      <div class="input-group mb-3">
+        <input  type="password" name="password" class="form-control @error('password') is-invalid @enderror"  placeholder="Password">
         <div class="input-group-append">
           <div class="input-group-text">
             <span class="fas fa-lock"></span>
           </div>
         </div>
+        @error('password')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
       </div>
     
       <div class="row">

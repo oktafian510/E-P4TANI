@@ -1,6 +1,12 @@
 @extends('akun.layout')
 @section('conten')
   <!-- /.login-logo -->
+
+  @if(session()->has('success'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+  </div>
+  @endif
   
   <div class="card">
     <div class="card-body login-card-body">

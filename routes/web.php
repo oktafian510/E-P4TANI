@@ -34,8 +34,9 @@ Route::get('/', function () {
 route::get('/', [viewController::class, 'home']);
 route::get('/article', [viewController::class, 'article']);
 route::get('/product', [viewController::class, 'product']);
-// route::get('/login', [loginController::class, 'index']);
-// route::get('/register', [registerController::class, 'index']);
+route::get('/login', [loginController::class, 'index']);
+Route::resource('register', registerController::class);
+
 // route::get('/catalog', [home::class, 'catalog']);
 // route::get('/faq', [home::class, 'faq']);
 // route::get('/about', [home::class, 'about']);
