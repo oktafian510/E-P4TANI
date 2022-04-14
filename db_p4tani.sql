@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2022 at 03:40 AM
+-- Generation Time: Apr 14, 2022 at 03:47 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -116,7 +116,8 @@ INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at
 (1, 'kaktus', 'kaktus adalah sebuah', '2022-04-11 13:29:44', '2022-04-11 13:29:49'),
 (3, 'sukulen', 'sukulen adalah', '2022-04-11 13:30:45', '2022-04-11 13:30:45'),
 (4, 'news', 'baru2022', '2022-04-11 16:47:02', '2022-04-11 16:47:02'),
-(5, 'cattt', 'apa itudah', '2022-04-11 18:47:33', '2022-04-11 18:47:33');
+(5, 'cattt', 'apa itudah', '2022-04-11 18:47:33', '2022-04-11 18:47:33'),
+(6, 'kaktusddd', 'dajgadadad', '2022-04-13 10:27:49', '2022-04-13 10:27:49');
 
 -- --------------------------------------------------------
 
@@ -177,7 +178,7 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `name`, `description`, `category`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Oktafian Dwi Cahyono', 'programer', 'IT support enginering', 'okta.jpg', NULL, '2022-04-11 12:57:33');
+(1, 'Oktafian Dwi Cahyono', 'programers', 'IT support enginering', 'okta.jpg', NULL, '2022-04-12 19:37:51');
 
 -- --------------------------------------------------------
 
@@ -292,7 +293,8 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `code`, `category`, `nameProduct`, `description`, `image`, `created_at`, `updated_at`) VALUES
 (2, '80842', 'kaktus', 'kaktus baru', 'kaktus adalah sebuah', 'image.png', '2022-04-11 17:21:06', '2022-04-11 17:21:06'),
-(5, '80841', 'sukulen', 'sukulen baru', 'kaktus adalah sebuah', 'image.png', '2022-04-11 18:05:01', '2022-04-11 18:05:01');
+(5, '80841', 'sukulen', 'sukulen baru', 'kaktus adalah sebuah', 'image.png', '2022-04-11 18:05:01', '2022-04-11 18:05:01'),
+(6, '45520', 'kaktus', 'kaktus merah', 'merah delima', 'kaktus.jpg', '2022-04-12 19:32:25', '2022-04-12 19:32:25');
 
 -- --------------------------------------------------------
 
@@ -309,6 +311,15 @@ CREATE TABLE `stocks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `stocks`
+--
+
+INSERT INTO `stocks` (`id`, `code`, `size`, `stock`, `price`, `created_at`, `updated_at`) VALUES
+(1, '80842', 'smalls', 10, 12000.00, NULL, '2022-04-12 19:24:11'),
+(3, '80841', 'standart', 12, 100000.00, '2022-04-12 19:28:24', '2022-04-12 19:28:24'),
+(4, '45520', 'standart', 12, 100000.00, '2022-04-12 19:32:35', '2022-04-12 19:32:35');
 
 -- --------------------------------------------------------
 
@@ -335,6 +346,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `access`, `address`, `city`, `province`, `gender`, `hp`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(6, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$Q.UBDp5hoIthrkV.Ygp46u1xUbxIDvxCN4Evt4zFS9R/rT.aXgQAG', '-', '-', '-', '-', '-', '-', '-', '-', NULL, '2022-04-13 12:13:38', '2022-04-13 12:13:38');
 
 --
 -- Indexes for dumped tables
@@ -456,7 +474,7 @@ ALTER TABLE `carts`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -474,7 +492,7 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -498,19 +516,19 @@ ALTER TABLE `posters`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
