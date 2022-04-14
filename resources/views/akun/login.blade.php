@@ -7,6 +7,12 @@
     {{ session('success') }}
   </div>
   @endif
+
+  @if(session()->has('loginError'))
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ session('loginError') }}
+  </div>
+  @endif
   
   <div class="card">
     <div class="card-body login-card-body">

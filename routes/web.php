@@ -34,9 +34,10 @@ Route::get('/', function () {
 route::get('/', [viewController::class, 'home']);
 route::get('/article', [viewController::class, 'article']);
 route::get('/product', [viewController::class, 'product']);
-route::get('/login', [loginController::class, 'index']);
+route::get('/login', [loginController::class, 'index'])->name('login')->middleware('guest');
 route::post('/login', [loginController::class, 'authenticate']);
-Route::resource('register', registerController::class);
+route::post('/logout', [loginController::class, 'logout']);
+Route::resource('register', registerController::class)->middleware('guest');
 
 // route::get('/catalog', [home::class, 'catalog']);
 // route::get('/faq', [home::class, 'faq']);
@@ -51,7 +52,7 @@ Route::resource('register', registerController::class);
 
 
 
-Route::resource('adminFaq', faqController::class);
+Route::resource('adminFaq', faqController::class)->middleware('auth');
 Route::resource('adminPoster', posterController::class);
 Route::resource('adminArticle', articleController::class);
 Route::resource('adminAbout', aboutController::class);
