@@ -58,7 +58,7 @@ Route::resource('register', registerController::class)->middleware('guest');
 
 
 
-Route::resource('adminFaq', faqController::class)->middleware('auth');
+Route::resource('adminFaq', faqController::class);
 Route::resource('adminPoster', posterController::class);
 Route::resource('adminArticle', articleController::class);
 Route::resource('adminAbout', aboutController::class);
