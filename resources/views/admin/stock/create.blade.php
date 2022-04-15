@@ -1,27 +1,61 @@
 @extends('admin.index')
 @section('conten')
-        <div class="card-body">
+<!-- baru -->
+<div class="container">
+    <div class="card-body">
             <form action="{{ url('adminStock') }}" method="POST">
                 @csrf
-                
-                <div class="form-group">
-                    <label for="code">Code</label>
-                    <select class="form-control" name="code" id="code" style="width: 100px">
-                        @foreach ($code as $key=>$value)
-                        <option>{{ $value->code }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <input type="text" name="size"  id="size">
-                <label for="size">Size</label><br>
-                <input type="text" name="stock"  id="stock">
-                <label for="stock">stock</label><br>
-                {{-- <input type="text" name="category"  id="category">
-                <label for="category">category</label><br> --}}
-                <input type="text" name="price" id="price">
-                <label for="price">price</label><br>
-                
-                <button type="submit">SIMPAN</button>
+                <table class="table col-sm-6">
+                    <thead class=" table-dark">
+                        <tr>
+                        
+                        <th scope="col">Label</th>
+                        <th scope="col">Input</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <label for="code">Code</label>
+                            </th>
+                            <td>
+                            <select class="form-control" name="code" id="code">
+                                @foreach ($code as $key=>$value)
+                                <option>{{ $value->code }}</option>
+                                @endforeach
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="size" class="">Size</label>
+                            </th>
+                            <td>
+                                <input type="text" name="size"  id="size">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="stock" class="">Stock</label>
+                            </th>
+                            <td>
+                                <input type="text" name="stock"  id="stock">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="price" class="">Price</label>
+                            </th>
+                            <td>
+                            <input type="text" name="price"  id="price">
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    <button class="btn btn-success" type="submit">SIMPAN</button>
+                    
             </form>
-        </div>
+    </div>
+</div>
+<!-- end baru -->
 @endsection

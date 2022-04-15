@@ -1,19 +1,40 @@
 @extends('admin.index')
 @section('conten')
-        <div class="card-body">
-
+<!-- baru -->
+<div class="container">
+    <div class="card-body">
             <form action="{{ url('adminCategory') }}" method="POST">
                 @csrf
-                <input type="text" name="name" id="name">
-                <label for="name">name</label> <br>
-                <input type="text" name="description" id="description">
-                <label for="description">description</label><br>
+                <table class="table col-sm-6">
+                    <thead class=" table-dark">
+                                             
+                        <th scope="col">Label</th>
+                        <th scope="col">Input</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <label for="name" class="">Name</label>
+                            </th>
+                            <td>
+                                <input type="text" name="name"  id="name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="description" class="">Description</label>
+                            </th>
+                            <td>
+                                <input type="text" name="description"  id="description">
+                            </td>
+                        </tr>
 
-            
-            
-                <button type="submit">SIMPAN</button>
-            
+                    </tbody>
+                    </table>
+                    <button class="btn btn-success" type="submit">SIMPAN</button>
+                    
             </form>
-            
-        </div>
+    </div>
+</div>
 @endsection
