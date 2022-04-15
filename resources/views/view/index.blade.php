@@ -50,7 +50,7 @@
                 <ul>
                   <li><a class=""  {{ ($title === "ABOUT") ? 'active' : ' ' }} href="/about">About</a></li>
                   <li><a class="" {{ ($title === "FAQ") ? 'active' : ' ' }}href="faq">FAQ</a></li>
-                  <li><a class="" href="#">Member</a></li>
+                  <li><a class="" {{ ($title === "MEMBER") ? 'active' : ' ' }}href="/member">Member</a></li>
                 </ul>
               </li>
               {{-- <li><a class="nav-link scrollto" href="/login" data-bs-toggle="modal" data-bs-target="#SignIn">Sign In</a></li> --}}

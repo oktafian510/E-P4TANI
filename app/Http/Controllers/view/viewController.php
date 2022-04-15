@@ -44,4 +44,11 @@ class viewController extends Controller
             'title'
         ]));
     }
+    public function member()
+    {
+        $title = 'MEMBER';
+        return view('view.member.index', compact([
+            'title'
+        ]));
+    }
 }
