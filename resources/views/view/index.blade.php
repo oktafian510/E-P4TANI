@@ -48,7 +48,7 @@
               <li><a class="nav-link scrollto {{ ($title === "PRODUCT") ? 'active' : ' ' }}" href="/product">Product</a></li>
               <li class="dropdown"><a class="" href="#"><span>Other Page</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a class="" href="#">About</a></li>
+                  <li><a class="" {{ ($title === "ABOUT") ? 'active' : ' ' }}" href="/about">About</a></li>
                   <li><a class="" href="#">FAQ</a></li>
                   <li><a class="" href="#">Member</a></li>
                 </ul>

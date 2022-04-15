@@ -35,6 +35,7 @@ route::get('/', [viewController::class, 'home']);
 route::get('/article', [viewController::class, 'article']);
 route::get('/product', [viewController::class, 'product']);
 route::get('/login', [loginController::class, 'index']);
+route::get('/about', [viewController::class, 'about']);
 route::post('/login', [loginController::class, 'authenticate']);
 Route::resource('register', registerController::class);
 

@@ -30,4 +30,11 @@ class viewController extends Controller
             'title'
         ]));
     }
+    public function about()
+    {
+        $title = 'ABOUT';
+        return view('view.about.index', compact([
+            'title'
+        ]));
+    }
 }
