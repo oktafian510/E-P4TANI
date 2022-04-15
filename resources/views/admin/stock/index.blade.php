@@ -8,11 +8,11 @@
                 <thead class="table-dark">
                   <tr>
                   <th>Id</th>
-                  <th>Code</th>
-                  <th>Size</th>
-                  <th>Stock</th>
-                  <th>Price</th>
-                  <th>aksi</th>
+                  <th>Code Product</th>
+                  <th>Size Product</th>
+                  <th>Stock Product</th>
+                  <th>Price Product</th>
+                  <th></th>
                   </tr>
                 </thead> 
                 @foreach ($datas as $key=>$value)
@@ -22,13 +22,12 @@
                       <td>{{ $value->size }}</td>
                       <td>{{ $value->stock }}</td>
                       <td>{{ $value->price }}</td>
-                      <td>
-                        <a class="btn btn-primary" href="{{ url('adminStock/'.$value->id.'/edit') }}">Update</a>
+                      <td class="text-right">
                         <form action="{{ url('adminStock/'.$value->id) }}" method="POST">
                           @csrf
-                          <br>
+                          <a class="btn btn-primary" href="{{ url('adminStock/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Update</a>
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-danger">DELETE</button>
+                          <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
                         </form>
                       </td>
                   </tr>
@@ -39,7 +38,7 @@
           </div>
           <br>
           <div class="card-footer clearfix align-centre">
-            <a href="{{ url('adminStock/create') }}">Tambah</a>
+            <a class="btn btn-success" href="{{ url('adminStock/create') }}"><i class="fas fa-plus"></i> Tambah</a>
             <ul class="pagination pagination-sm m-0 float-right">
               <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>

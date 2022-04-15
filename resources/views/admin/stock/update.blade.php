@@ -48,7 +48,7 @@
                                 </tr>
                             </tbody>
                             </table>
-                            <button type="submit" class="btn btn-success">SIMPAN</button>
+                            <button type="submit" class="btn btn-success"> <b>S</b>IMPAN</button>
                             
                     </form>
             </div>
