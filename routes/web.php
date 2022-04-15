@@ -35,9 +35,9 @@ route::get('/', [viewController::class, 'home']);
 route::get('/article', [viewController::class, 'article']);
 route::get('/product', [viewController::class, 'product']);
 route::get('/about', [viewController::class, 'about']);
+route::get('/faq', [viewController::class, 'faq']);
 
 route::get('/login', [loginController::class, 'index'])->name('login')->middleware('guest');
->>>>>>> 3cbba8048a35b518e9852c587c37d38ce4afec4b
 route::post('/login', [loginController::class, 'authenticate']);
 route::post('/logout', [loginController::class, 'logout']);
 Route::resource('register', registerController::class)->middleware('guest');

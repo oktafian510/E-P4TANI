@@ -37,4 +37,11 @@ class viewController extends Controller
             'title'
         ]));
     }
+    public function faq()
+    {
+        $title = 'FAQ';
+        return view('view.faq.index', compact([
+            'title'
+        ]));
+    }
 }
