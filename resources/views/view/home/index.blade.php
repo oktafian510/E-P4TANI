@@ -1,6 +1,6 @@
 @extends('view.index')
 @section('conten')
-   
+   <br><br><br><br>
    <!-- ======= Hero Section ======= -->
 	<section id="hero" class="d-flex align-items-center">
 		<br>
@@ -10,10 +10,10 @@
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-					<h1>Elegant and creative solutions</h1>
-					<h2>We are team of talented designers making websites with Bootstrap</h2>
+					<h1>E - P4TANI</h1>
+					<h2>Tempatnya Belanja Tanaman hias kesukaan langsung Dari petani asli Bondowoso</h2>
 					<div class="d-flex">
-						<a href="#about" class="btn-get-started scrollto">Get Started</a>
+						<a href="#about" class="btn-get-started scrollto">Pelajari</a>
 						<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
 					</div>
 				</div>
@@ -24,6 +24,7 @@
 		</div>
 	</section><!-- End Hero -->
     <!-- ======= Article ======= -->
+    <br><br><br><br>
 	<div class="Article">
 			
 	    <section id="featured-services" class="featured-services">
@@ -63,7 +64,8 @@
 	      <br>
 	      <br>
 	    </section><!-- End Featured Services Section -->
-	    	<!-- ======= Featured Services Section ======= -->
+	    <!-- ======= Featured Services Section ======= -->
+        
 	    
 	    <section id="featured-services" class="featured-services">
 
@@ -99,12 +101,14 @@
 	    <br>
 			
 	</div>
-	<br><br><br>
+	<br><br>
 	<div class="Product" style="background-color: #3cd407;">
 			<!-- ======= Featured Services Section ======= -->
-		<br>
-		<br>
+		
 	    <div class="container px-4 px-lg-5 mt-5">
+            <br><br>
+            <h1>Product</h1>
+            <br><br>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
                         <div class="card h-100">
