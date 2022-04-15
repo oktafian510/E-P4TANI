@@ -53,8 +53,24 @@
                   <li><a class="" href="#">Member</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link scrollto " href="Signup">Signup</a></li>
-              <li><a class="nav-link scrollto" href="Signin" data-bs-toggle="modal" data-bs-target="#SignIn">Sign In</a></li>
+              {{-- <li><a class="nav-link scrollto" href="/login" data-bs-toggle="modal" data-bs-target="#SignIn">Sign In</a></li> --}}
+
+			  @auth
+			  <li class="dropdown"><a class="" href="#"><span>{{ auth()->user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a class="" href="#">My Profile</a></li>
+				  <li>
+					  <form action="/logout" method="POST">
+						@csrf
+						<button type="submit" class="dropdown">LogOut</button>
+					  </form>
+				  </li>
+                </ul>
+              </li>
+			  @else
+              <li><a class="nav-link scrollto" href="/login">Sign In</a></li>
+			  @endauth
+
               
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
