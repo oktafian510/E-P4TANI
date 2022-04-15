@@ -17,6 +17,7 @@
                 <button type="submit">SIMPAN</button>
             </form>
         </div>
+        <!-- baru -->
         <div class="container">
             <div class="card-body">
                     <form action="{{ url('adminStock/'.$model->id) }}" method="POST">
@@ -77,4 +78,5 @@
                     </form>
             </div>
         </div>
+        <!-- end baru -->
 @endsection
