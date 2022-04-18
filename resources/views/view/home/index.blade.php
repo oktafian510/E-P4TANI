@@ -40,7 +40,8 @@
                 @foreach($article as $key=>$value)
                 <div class="col-lg-4 col-md-6" style="margin-bottom: 5%">
                     <div class="icon-box">
-                    <div class="icon"><i class="bi bi-laptop"></i></div>
+                    {{-- <div class="icon"><i class="bi bi-laptop"></i></div> --}}
+                    <img class="card-img-top" style="height:150px; margin-bottom:2%;" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." />
                     <h4 class="title"><a href="">{{ $value->title }}</a></h4>
                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>

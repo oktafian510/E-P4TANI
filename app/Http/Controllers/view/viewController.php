@@ -27,8 +27,12 @@ class viewController extends Controller
     public function article()
     {
         $title = 'ARTICLE';
+        $article = article::all();
+        $articlePost = article::limit(1)->get();
         return view('view.article.index', compact([
-            'title'
+            'title',
+            'articlePost',
+            'article'
         ]));
     }
     public function product()
