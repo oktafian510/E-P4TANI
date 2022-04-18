@@ -9,6 +9,7 @@
 	    <br>
 		<div class="container container-fluid">
 			<div class="row">
+                {{-- <h1>{{ $abouts }}</h1> --}}
                 @foreach ($about as $key=>$value)
 				<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
 					<h1>{{ $value->company }}</h1>
