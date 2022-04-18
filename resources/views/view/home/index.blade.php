@@ -9,17 +9,19 @@
 	    <br>
 		<div class="container container-fluid">
 			<div class="row">
+                @foreach ($about as $key=>$value)
 				<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-					<h1>E - P4TANI</h1>
-					<h2>Tempatnya Belanja Tanaman hias kesukaan langsung Dari petani asli Bondowoso</h2>
+					<h1>{{ $value->company }}</h1>
+					<h2>{{ $value->description }}</h2>
 					<div class="d-flex">
-						<a href="#about" class="btn-get-started scrollto">Pelajari</a>
-						<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+						<a href="/about" class="btn-get-started scrollto">Pelajari</a>
+						<a href="{{ $value->yt }}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
 					</div>
 				</div>
 				<div class="col-lg-6 order-1 order-lg-2 hero-img">
-					<img src="{{ asset('user/assets/img/hero-img.png') }}" class="img-fluid animated" alt="">
+					<img src="{{ asset('user/assets/img/').'/'.$value->image }}" class="img-fluid animated" alt="">
 				</div>
+                @endforeach
 	    	</div>
 		</div>
 	</section><!-- End Hero -->
@@ -34,14 +36,16 @@
 	     
 
 	        <div class="row">
-	          <div class="col-lg-4 col-md-6">
-	            <div class="icon-box">
-	              <div class="icon"><i class="bi bi-laptop"></i></div>
-	              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-	              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-	            </div>
-	          </div>
-	          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                @foreach($article as $key=>$value)
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 5%">
+                    <div class="icon-box">
+                    <div class="icon"><i class="bi bi-laptop"></i></div>
+                    <h4 class="title"><a href="">{{ $value->title }}</a></h4>
+                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                    </div>
+                </div>
+                @endforeach
+	          {{-- <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
 	            <div class="icon-box">
 	              <div class="icon"><i class="bi bi-card-checklist"></i></div>
 	              <h4 class="title"><a href="">Dolor Sitema</a></h4>
@@ -55,19 +59,13 @@
 	              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
 	            </div>
 	          </div>
-		          
+		           --}}
 
 	        </div>
-
-
 	      </div>
-	      <br>
-	      <br>
 	    </section><!-- End Featured Services Section -->
 	    <!-- ======= Featured Services Section ======= -->
-        
-	    
-	    <section id="featured-services" class="featured-services">
+	    {{--<section id="featured-services" class="featured-services">
 
 	      <div class="container container">
 
@@ -96,12 +94,8 @@
 	        </div>
 
 	      </div>
-	    </section><!-- End Featured Services Section -->
-	    <br>
-	    <br>
-			
+	    </section><!-- End Featured Services Section --> --}}
 	</div>
-	<br><br>
 	<div class="Product" style="background-color: #3cd407;">
 			<!-- ======= Featured Services Section ======= -->
 		

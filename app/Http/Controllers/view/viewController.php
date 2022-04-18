@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\view;
 
 use App\Http\Controllers\Controller;
+use App\Models\about;
+use App\Models\article;
 use Doctrine\DBAL\Schema\Index;
 use Illuminate\Http\Request;
 
@@ -12,8 +14,12 @@ class viewController extends Controller
     public function home()
     {
         $title = 'HOME';
+        $about = about::limit(1)->get();
+        $article = article::limit(6)->get();
         return view('view.home.index', compact([
-            'title'
+            'title',
+            'about',
+            'article'
         ]));
     }
     public function article()

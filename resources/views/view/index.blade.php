@@ -113,7 +113,7 @@
 	    <div class="container footer-bottom clearfix">
 	    	<center>
 	    		<div class="copyright">
-	        &copy; Copyright <strong><span>P4TANI</span></strong>. All Rights Reserved
+	        &copy; Copyright <strong><span>2022</span></strong>. All Rights Reserved
 	      </div>
 	    	</center>
 	      
