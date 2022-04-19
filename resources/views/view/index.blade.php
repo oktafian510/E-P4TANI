@@ -79,8 +79,9 @@
 	    </div>
     </header>
     <!-- End Header -->
-
-    @yield('conten')
+	<div class="container">
+		@yield('conten')
+	</div>
 
 	<!-- ======= Footer ======= -->
 	  <footer id="footer">

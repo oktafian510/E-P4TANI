@@ -12,6 +12,7 @@ use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
 use App\Http\Controllers\view\viewArticleController;
 use App\Http\Controllers\view\viewController;
+use App\Models\about;
 use App\Models\article;
 use App\Models\member;
 use Illuminate\Support\Facades\Route;
@@ -27,13 +28,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test', function () {
+    $title = 'tets';
+    $about = about::all();
+    return view('view.product.show', compact(['title', 'about']));
 });
+route::get('/', [viewController::class, 'home']);
 
 // route::get('/home', [viewController::class, 'home']);
 // routing untuk user
-route::get('/', [viewController::class, 'home']);
 // route::get('/article', [viewController::class, 'article']);
 route::get('/product', [viewController::class, 'product']);
 route::get('/about', [viewController::class, 'about']);
