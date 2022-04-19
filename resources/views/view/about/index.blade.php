@@ -4,35 +4,37 @@
  <br>
  <br>
  <br>
- <section id="about" class="about">
+  <section id="about" class="about">
     <div class="container">
 
       <div class="row">
-        <div class="col-lg-6">
-          <img src="{{asset('user/assets/img/about.png')}}" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0 content">
-          <h3>E - P4TANI </h3>
-          <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <ul>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
-          </ul>
-          <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
+        @foreach($about as $key=>$value)
+          <div class="col-lg-6">
+            <img src="{{asset('user/assets/img/hero-img.png')}}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <h3>{{ $value->company }}</h3>
+            <p class="fst-italic">
+              {{ $value->description}}
+            </p>
+            <ul>
+              <li> <a href="https://api.whatsapp.com/send/?phone={{ $value->hp }}"><i class="bi bi-whatsapp"></i> {{ $value->hp }}</a></li>
+              <li> <a href="{{ $value->email }}"><i class="bi bi-envelope"></i> {{ $value->email }}</a></li>
+              <li> <a href="{{ $value->yt }}"><i class="bi bi-youtube"></i> {{ $value->yt }}</a></li>
+              <li> <a href="{{ $value->ig }}"><i class="bi bi-instagram"></i> {{ $value->ig }}</a></li>
+              <li> <a href="{{ $value->fb }}"><i class="bi bi-facebook"></i> {{ $value->fb }}</a></li>
+            </ul>
+            <p>
+              updated at: {{ $value->updated_at }}
+            </p>
+          </div>
+        @endforeach
       </div>
 
     </div>
   </section><!-- End About Section -->
   <!-- contact me -->
-  <section id="contact" class="contact">
+  {{-- <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
@@ -100,6 +102,6 @@
         </div>
 
       </div>
-    </section>
+  </section> --}}
     <!-- End Contact Section -->
 @endsection

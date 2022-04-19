@@ -5,6 +5,7 @@ namespace App\Http\Controllers\view;
 use App\Http\Controllers\Controller;
 use App\Models\about;
 use App\Models\article;
+use App\Models\categorie;
 use App\Models\faq;
 use App\Models\member;
 use App\Models\product;
@@ -18,10 +19,12 @@ class viewController extends Controller
     public function home()
     {
         $title = 'HOME';
+        $product  = product::limit(8)->get();
         $about = about::limit(1)->get();
         $article = article::limit(6)->get();
         return view('view.home.index', compact([
             'title',
+            'product',
             'about',
             'article'
         ]));
@@ -29,6 +32,7 @@ class viewController extends Controller
     public function article()
     {
         $title = 'ARTICLE';
+        $categorie = categorie::all();
         $about = about::limit(1)->get();
         $article = article::all();
         $articlePost = article::limit(1)->get();
@@ -36,6 +40,7 @@ class viewController extends Controller
             'title',
             'articlePost',
             'about',
+            'categorie',
             'article'
         ]));
     }

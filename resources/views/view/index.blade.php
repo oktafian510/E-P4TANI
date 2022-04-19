@@ -93,7 +93,7 @@
 				<div class="col-lg-6">
 					<h3>{{ $value->company }}</h3>
 					<p>Contact Us At</p>
-					<a href="{{ $value->hp }}">Whatsapp</a>
+					<a href="https://api.whatsapp.com/send/?phone={{ $value->hp }}">Whatsapp</a>
 					<a href="{{ $value->yt }}">Youtube</a>
 					<a href="{{ $value->ig }}">Instagram</a>
 					<a href="{{ $value->fb }}">Facebook</a>

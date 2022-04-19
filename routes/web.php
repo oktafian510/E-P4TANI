@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\admin\stokController;
 use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
+use App\Http\Controllers\view\viewArticleController;
 use App\Http\Controllers\view\viewController;
 use App\Models\article;
 use App\Models\member;
@@ -33,7 +34,7 @@ Route::get('/', function () {
 // route::get('/home', [viewController::class, 'home']);
 // routing untuk user
 route::get('/', [viewController::class, 'home']);
-route::get('/article', [viewController::class, 'article']);
+// route::get('/article', [viewController::class, 'article']);
 route::get('/product', [viewController::class, 'product']);
 route::get('/about', [viewController::class, 'about']);
 route::get('/faq', [viewController::class, 'faq']);
@@ -44,6 +45,7 @@ route::post('/login', [loginController::class, 'authenticate']);
 route::post('/logout', [loginController::class, 'logout']);
 Route::resource('register', registerController::class)->middleware('guest');
 // end routing untuk user
+Route::resource('article', viewArticleController::class);
 
 // route::get('/catalog', [home::class, 'catalog']);
 // route::get('/faq', [home::class, 'faq']);

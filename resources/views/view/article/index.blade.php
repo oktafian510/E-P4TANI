@@ -8,13 +8,14 @@
         <div class="col-lg-8">
             <!-- Featured blog post-->
             @foreach($articlePost as $key=>$value)
-            <div class="card mb-4">
+           
+            <div class="card mb-4 {{ ($hide === "hide") ? 'collapse' : ' ' }}  ">
                 <a href="#!"><img class="card-img-top" style="height: 350PX;" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted">{{ $value->updated_at }}</div>
                     <h2 class="card-title">{{ $value->title }}</h2>
                     <p class="card-text">{{ $value->description }}</p>
-                    <a class="btn btn-primary" href="#!">Read more →</a>
+                    <a class="btn btn-primary" href="{{ url('article/'.$value->id.'/edit') }}">Read more →</a>
                 </div>
             </div>
             @endforeach
@@ -30,7 +31,7 @@
                             <div class="small text-muted">{{ $value->updated_at }}</div>
                             <h2 class="card-title h4">{{ $value->title }}</h2>
                             <p class="card-text">{{ $value->description }}</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <a class="btn btn-primary" href="{{ url('article/'.$value->id.'/edit') }}">Read more →</a>
                         </div>
                     </div>
                 </div>
@@ -58,20 +59,14 @@
                 <div class="card-header">Categories</div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#!">Web Design</a></li>
-                                <li><a href="#!">HTML</a></li>
-                                <li><a href="#!">Freebies</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#!">JavaScript</a></li>
-                                <li><a href="#!">CSS</a></li>
-                                <li><a href="#!">Tutorials</a></li>
-                            </ul>
-                        </div>
+                        @foreach ($categorie as $key=>$value)
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    {{-- <li><a href="{{ url('article/'.$value->name.'/edit') }}">{{ $value->name }}</a></li> --}}
+                                    <li><a href="{{ url('article/'.$value->name) }}">{{ $value->name }}</a></li>
+                                </ul>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
