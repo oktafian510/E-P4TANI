@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2022 at 03:47 AM
+-- Generation Time: Apr 19, 2022 at 02:47 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -46,7 +46,7 @@ CREATE TABLE `abouts` (
 --
 
 INSERT INTO `abouts` (`id`, `company`, `description`, `email`, `fb`, `hp`, `ig`, `yt`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'p4tani', 'descripsi inis', 'p4tani@gmail.com', 'fb.com', 'hp.com', 'ig.com', 'yt.com', 'image.com', NULL, '2022-04-11 12:44:34');
+(1, 'E-P4TANI', 'Tempatnya Belanja Tanaman hias kesukaan langsung Dari petani asli Bondowoso', 'p4tani@gmail.com', 'fb.com', '+6282334739813', 'ig.com', 'https://youtu.be/agK6CSvLuSs', 'hero-img.png', NULL, '2022-04-11 12:44:34');
 
 -- --------------------------------------------------------
 
@@ -70,9 +70,12 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `title`, `description`, `writer`, `category`, `image`, `created_at`, `updated_at`) VALUES
-(3, 'judul 2', 'lorem', 'okta', 'cat', 'image', '2022-04-11 12:20:38', '2022-04-11 12:21:31'),
-(5, 'baru', 'iya', 'sss', 'sukulen', 'sssssss', '2022-04-11 16:43:27', '2022-04-11 16:43:27'),
-(6, 'ini kaktus baru', 'owhh baru', 'okta', 'kaktus', 'kaktus.jpg', '2022-04-11 16:44:05', '2022-04-11 16:44:05');
+(3, 'Post Title', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!\r\n\r\n', 'okta', 'sukulen', 'portfolio-4.jpg', '2022-04-11 12:20:38', '2022-04-11 12:21:31'),
+(5, 'Post Title', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!\r\n\r\n', 'sss', 'news', 'portfolio-9.jpg', '2022-04-11 16:43:27', '2022-04-11 16:43:27'),
+(6, 'Post Title', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!\r\n\r\n', 'okta', 'kaktus', 'portfolio-7.jpg', '2022-04-11 16:44:05', '2022-04-11 16:44:05'),
+(7, 'Post Title', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!\r\n\r\n', 'okta', 'sukulen', 'portfolio-8.jpg', '2022-04-11 12:20:38', '2022-04-11 12:21:31'),
+(8, 'Post Title 8', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!\n\n', 'sss', 'aca', 'portfolio-9.jpg', '2022-04-11 16:43:27', '2022-04-11 16:43:27'),
+(9, 'Post Title', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!\r\n\r\n', 'okta', 'kaktus', 'portfolio-2.jpg', '2022-04-11 16:44:05', '2022-04-11 16:44:05');
 
 -- --------------------------------------------------------
 
@@ -116,8 +119,7 @@ INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at
 (1, 'kaktus', 'kaktus adalah sebuah', '2022-04-11 13:29:44', '2022-04-11 13:29:49'),
 (3, 'sukulen', 'sukulen adalah', '2022-04-11 13:30:45', '2022-04-11 13:30:45'),
 (4, 'news', 'baru2022', '2022-04-11 16:47:02', '2022-04-11 16:47:02'),
-(5, 'cattt', 'apa itudah', '2022-04-11 18:47:33', '2022-04-11 18:47:33'),
-(6, 'kaktusddd', 'dajgadadad', '2022-04-13 10:27:49', '2022-04-13 10:27:49');
+(5, 'aca', 'apa itudah', '2022-04-11 18:47:33', '2022-04-15 03:09:17');
 
 -- --------------------------------------------------------
 
@@ -155,7 +157,13 @@ CREATE TABLE `faqs` (
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
 (4, 'siapa programernya', 'okta', '2022-04-11 10:27:15', '2022-04-11 10:27:15'),
-(6, 'ini pertanyaan kedua', 'hihihihi', '2022-04-11 11:17:03', '2022-04-11 11:17:03');
+(6, 'ini pertanyaan kedua', 'hihihihi', '2022-04-11 11:17:03', '2022-04-11 11:17:03'),
+(7, 'ketiga ?\r\n', 'okta', '2022-04-11 10:27:15', '2022-04-11 10:27:15'),
+(8, 'ke empat ?', 'hihihihi', '2022-04-11 11:17:03', '2022-04-11 11:17:03'),
+(9, 'siapa programernya 5', 'okta', '2022-04-11 10:27:15', '2022-04-11 10:27:15'),
+(10, 'ini pertanyaan kedua 6', 'hihihihi', '2022-04-11 11:17:03', '2022-04-11 11:17:03'),
+(11, 'ketiga  7?\r\n', 'okta', '2022-04-11 10:27:15', '2022-04-11 10:27:15'),
+(12, 'ke empat 8?', 'hihihihi', '2022-04-11 11:17:03', '2022-04-11 11:17:03');
 
 -- --------------------------------------------------------
 
@@ -178,7 +186,12 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `name`, `description`, `category`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Oktafian Dwi Cahyono', 'programers', 'IT support enginering', 'okta.jpg', NULL, '2022-04-12 19:37:51');
+(1, 'Oktafian Dwi Cahyono', 'Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut', 'IT support enginering', 'team-1.jpg', NULL, '2022-04-12 19:37:51'),
+(6, 'Oktafian Dwi Cahyono', 'Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut', 'IT support enginering', 'team-1.jpg', NULL, '2022-04-12 19:37:51'),
+(7, 'Oktafian Dwi Cahyono', 'Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut', 'IT support enginering', 'team-1.jpg', NULL, '2022-04-12 19:37:51'),
+(8, 'Oktafian Dwi Cahyono', 'Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut', 'IT support enginering', 'team-1.jpg', NULL, '2022-04-12 19:37:51'),
+(9, 'Oktafian Dwi Cahyono', 'Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut', 'IT support enginering', 'team-1.jpg', NULL, '2022-04-12 19:37:51'),
+(10, 'Oktafian Dwi Cahyono', 'Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut', 'IT support enginering', 'team-1.jpg', NULL, '2022-04-12 19:37:51');
 
 -- --------------------------------------------------------
 
@@ -215,7 +228,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2022_04_11_183613_create_posters_table', 4),
 (17, '2022_04_11_235045_create_products_table', 5),
 (18, '2022_04_11_235243_create_products_table', 6),
-(19, '2022_04_12_001614_create_products_table', 7);
+(19, '2022_04_12_001614_create_products_table', 7),
+(20, '2022_04_19_061257_update_products_table', 8);
 
 -- --------------------------------------------------------
 
@@ -267,8 +281,10 @@ CREATE TABLE `posters` (
 --
 
 INSERT INTO `posters` (`id`, `title`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(3, 'poster1', 'oke', 'imageposter.jpg', '2022-04-11 12:16:01', '2022-04-11 12:16:01'),
-(4, 'ok', 'dd', 'sddd', '2022-04-11 12:18:47', '2022-04-11 12:18:47');
+(3, 'First slide label', 'Some representative placeholder content for the third slide.', 'portfolio-2.jpg.jpg', '2022-04-11 12:16:01', '2022-04-11 12:16:01'),
+(4, 'Second slide label', 'Some representative placeholder content for the third slide.', 'portfolio-7.jpg', '2022-04-11 12:18:47', '2022-04-11 12:18:47'),
+(5, 'Thrid slide label', 'Some representative placeholder content for the third slide.', 'portfolio-2.jpg.jpg', '2022-04-11 12:16:01', '2022-04-11 12:16:01'),
+(6, 'Second slide label', 'Some representative placeholder content for the third slide.', 'portfolio-7.jpg', '2022-04-11 12:18:47', '2022-04-11 12:18:47');
 
 -- --------------------------------------------------------
 
@@ -284,17 +300,21 @@ CREATE TABLE `products` (
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `priceRange` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `code`, `category`, `nameProduct`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(2, '80842', 'kaktus', 'kaktus baru', 'kaktus adalah sebuah', 'image.png', '2022-04-11 17:21:06', '2022-04-11 17:21:06'),
-(5, '80841', 'sukulen', 'sukulen baru', 'kaktus adalah sebuah', 'image.png', '2022-04-11 18:05:01', '2022-04-11 18:05:01'),
-(6, '45520', 'kaktus', 'kaktus merah', 'merah delima', 'kaktus.jpg', '2022-04-12 19:32:25', '2022-04-12 19:32:25');
+INSERT INTO `products` (`id`, `code`, `category`, `nameProduct`, `description`, `image`, `created_at`, `updated_at`, `priceRange`) VALUES
+(2, '80842', 'kaktus', 'Fancy Product', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 17:21:06', '2022-04-18 23:25:18', 'Rp10000 - Rp30000'),
+(5, '80841', 'sukulen', 'Special Item', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 18:05:01', '2022-04-18 23:25:32', 'Rp20000 - Rp40000'),
+(6, '4202', 'kaktus', 'Sale Item', 'merah delima', 'image.jpg', '2022-04-12 19:32:25', '2022-04-18 23:26:15', 'Rp10000 - Rp30000'),
+(7, '8082', 'kaktus', 'Fancy Product', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 17:21:06', '2022-04-18 23:26:27', 'Rp10000 - Rp30000'),
+(8, '8041', 'sukulen', 'Special Item', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 18:05:01', '2022-04-18 23:26:38', 'Rp20000 - Rp40000'),
+(9, '422', 'kaktus', 'Sale Item', 'merah delima', 'image.jpg', '2022-04-12 19:32:25', '2022-04-18 23:26:49', 'Rp10000 - Rp30000');
 
 -- --------------------------------------------------------
 
@@ -317,9 +337,24 @@ CREATE TABLE `stocks` (
 --
 
 INSERT INTO `stocks` (`id`, `code`, `size`, `stock`, `price`, `created_at`, `updated_at`) VALUES
-(1, '80842', 'smalls', 10, 12000.00, NULL, '2022-04-12 19:24:11'),
-(3, '80841', 'standart', 12, 100000.00, '2022-04-12 19:28:24', '2022-04-12 19:28:24'),
-(4, '45520', 'standart', 12, 100000.00, '2022-04-12 19:32:35', '2022-04-12 19:32:35');
+(7, '80842', 'small', 10, 100000.00, '2022-04-18 07:26:27', '2022-04-18 07:26:27'),
+(8, '80842', 'standart', 10, 200000.00, '2022-04-18 07:26:38', '2022-04-18 07:26:38'),
+(9, '80842', 'big', 10, 300000.00, '2022-04-18 07:26:52', '2022-04-18 07:26:52'),
+(10, '80841', 'small', 10, 200000.00, '2022-04-18 07:27:04', '2022-04-18 07:27:04'),
+(11, '80841', 'standart', 10, 300000.00, '2022-04-18 07:27:21', '2022-04-18 07:27:21'),
+(12, '80841', 'big', 10, 400000.00, '2022-04-18 07:27:40', '2022-04-18 07:27:40'),
+(13, '4202', 'small', 10, 100000.00, '2022-04-18 07:26:27', '2022-04-18 07:28:54'),
+(14, '4202', 'standart', 10, 200000.00, '2022-04-18 07:26:38', '2022-04-18 07:29:03'),
+(15, '4202', 'big', 10, 300000.00, '2022-04-18 07:26:52', '2022-04-18 07:29:09'),
+(16, '8041', 'small', 10, 200000.00, '2022-04-18 07:27:04', '2022-04-18 07:29:41'),
+(17, '8041', 'standart', 10, 300000.00, '2022-04-18 07:27:21', '2022-04-18 07:29:50'),
+(18, '8041', 'big', 10, 400000.00, '2022-04-18 07:27:40', '2022-04-18 07:29:57'),
+(19, '8082', 'small', 10, 100000.00, '2022-04-18 07:26:27', '2022-04-18 07:30:33'),
+(20, '8082', 'standart', 10, 200000.00, '2022-04-18 07:26:38', '2022-04-18 07:30:38'),
+(21, '8082', 'big', 10, 300000.00, '2022-04-18 07:26:52', '2022-04-18 07:30:42'),
+(22, '422', 'small', 10, 100000.00, '2022-04-18 07:26:27', '2022-04-18 07:30:33'),
+(23, '422', 'standart', 10, 200000.00, '2022-04-18 07:26:38', '2022-04-18 07:30:38'),
+(24, '422', 'big', 10, 300000.00, '2022-04-18 07:26:52', '2022-04-18 07:30:42');
 
 -- --------------------------------------------------------
 
@@ -352,7 +387,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `access`, `address`, `city`, `province`, `gender`, `hp`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(6, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$Q.UBDp5hoIthrkV.Ygp46u1xUbxIDvxCN4Evt4zFS9R/rT.aXgQAG', '-', '-', '-', '-', '-', '-', '-', '-', NULL, '2022-04-13 12:13:38', '2022-04-13 12:13:38');
+(8, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$HV6pSq5weTd8vvNiCLTUjuVof.xBtN5oJXx9lbCsLrQ5qA1CkiyYa', '-', '-', '-', '-', '-', '-', '-', '-', NULL, '2022-04-13 20:23:10', '2022-04-13 20:23:10');
 
 --
 -- Indexes for dumped tables
@@ -462,7 +497,7 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `carts`
@@ -474,7 +509,7 @@ ALTER TABLE `carts`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -486,19 +521,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -510,25 +545,25 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posters`
 --
 ALTER TABLE `posters`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
