@@ -12,6 +12,7 @@
                     <th>Category</th>
                     <th>Nama Product</th>
                     <th>Description</th>
+                    <th>Price</th>
                     <th>Image</th>
                     <th></th>
                   </tr>
@@ -23,6 +24,7 @@
                             <td>{{ $value->category }}</td>
                             <td>{{ $value->nameProduct }}</td>
                             <td>{{ $value->description }}</td>
+                            <td>{{ $value->priceRange }}</td>
                             <td>{{ $value->image }}</td>
                             <td>
                               <form action="{{ url('adminProduct/'.$value->id) }}" method="POST">

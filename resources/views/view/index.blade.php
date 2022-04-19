@@ -88,18 +88,18 @@
 	    <div class="footer-top">
 
 	      <div class="container">
-
-	        <div class="row  justify-content-center">
-	          <div class="col-lg-6">
-	            <h3>E P4TANI</h3>
-	            <p>Contact Us At</p>
-	            <a href="">Whatsapp</a>
-	            <a href="">Youtube</a>
-	            <a href="">Instagram</a>
-	            <a href="">Facebook</a>
-	          </div>
-	        </div>
-
+			@foreach($about as $key=>$value)
+				<div class="row  justify-content-center">
+				<div class="col-lg-6">
+					<h3>{{ $value->company }}</h3>
+					<p>Contact Us At</p>
+					<a href="{{ $value->hp }}">Whatsapp</a>
+					<a href="{{ $value->yt }}">Youtube</a>
+					<a href="{{ $value->ig }}">Instagram</a>
+					<a href="{{ $value->fb }}">Facebook</a>
+				</div>
+				</div>
+			@endforeach
 	        <div class="row footer-newsletter justify-content-center">
 	          <div class="col-lg-6">
 	          </div>

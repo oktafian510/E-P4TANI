@@ -61,6 +61,7 @@ class productController extends Controller
         $model->category = $request->category;
         $model->nameProduct = $request->nameProduct;
         $model->description = $request->description;
+        $model->priceRange = $request->priceRange;
         $model->image = $request->image;
         $model->save();
         return redirect('adminProduct');
@@ -111,6 +112,7 @@ class productController extends Controller
         $model->category = $request->category;
         $model->nameProduct = $request->nameProduct;
         $model->description = $request->description;
+        $model->priceRange = $request->priceRange;
         $model->image = $request->image;
         $model->save();
         return redirect('adminProduct');

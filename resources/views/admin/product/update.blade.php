@@ -48,6 +48,14 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">
+                                        <label for="priceRange">Price</label>
+                                    </th>
+                                    <td>
+                                    <input type="text" name="priceRange" value="{{ $model->priceRange }}" id="priceRange">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
                                         <label for="image">image</label>
                                     </th>
                                     <td>
