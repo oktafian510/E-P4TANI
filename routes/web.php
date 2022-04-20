@@ -12,6 +12,7 @@ use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
 use App\Http\Controllers\view\viewArticleController;
 use App\Http\Controllers\view\viewController;
+use App\Http\Controllers\view\viewProductController;
 use App\Models\about;
 use App\Models\article;
 use App\Models\member;
@@ -28,17 +29,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    $title = 'tets';
-    $about = about::all();
-    return view('view.product.show', compact(['title', 'about']));
-});
+// Route::get('/test', function () {
+//     $title = 'tets';
+//     $about = about::all();
+//     return view('view.product.show', compact(['title', 'about']));
+// });
 route::get('/', [viewController::class, 'home']);
 
 // route::get('/home', [viewController::class, 'home']);
 // routing untuk user
-// route::get('/article', [viewController::class, 'article']);
-route::get('/product', [viewController::class, 'product']);
 route::get('/about', [viewController::class, 'about']);
 route::get('/faq', [viewController::class, 'faq']);
 route::get('/member', [viewController::class, 'member']);
@@ -49,7 +48,7 @@ route::post('/logout', [loginController::class, 'logout']);
 Route::resource('register', registerController::class)->middleware('guest');
 // end routing untuk user
 Route::resource('article', viewArticleController::class);
-
+Route::resource('product', viewProductController::class);
 // route::get('/catalog', [home::class, 'catalog']);
 // route::get('/faq', [home::class, 'faq']);
 // route::get('/about', [home::class, 'about']);
