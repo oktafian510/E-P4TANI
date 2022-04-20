@@ -44,7 +44,7 @@
                     <img class="card-img-top" style="height:50%; margin-bottom:2%;" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." />
                     <h4 class="title"><a href="">{{ $value->title }}</a></h4>
                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-					<div class="text-center"><a class="btn btn-outline-success btn-sm mt-auto" href="#">Read More</a></div>
+					<div class="text-center"><a class="btn btn-outline-success btn-sm mt-auto" href="#">Read More →</a></div>
                     </div>
                 </div>
                 @endforeach
@@ -112,7 +112,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 border-gray border-5">
                             <!-- Product image-->
-                            <img class="card-img-top border-gray border-5" style="height: 50%;" src="{{ asset('user/assets/img/catalog').'/'.$value->image }}" alt="..." />
+                            <img class="card-img-top img-thumbnail" style="height: 50%;" src="{{ asset('user/assets/img/catalog').'/'.$value->image }}" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

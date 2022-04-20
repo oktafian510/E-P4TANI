@@ -46,11 +46,11 @@
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#Promo" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#Promo" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
@@ -58,11 +58,11 @@
           <br>
         <!-- end promo -->
         
-            <div class="input-group">
+            <div class="input-group ">
                 <div class="form-text">
                   <input id="search-focus" type="search" id="form1" class="form-control" />
                 </div>
-                <button type="button" class="btn btn-dark">
+                <button type="button" class="btn btn-sm btn-success ">
                   <i class="fas fa-search">
                     <label class="form-label" for="form1">Search</label>
                   </i>
@@ -84,7 +84,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" style="height: 50%;" src="{{ asset('user/assets/img/catalog').'/'.$value->image }}" alt="..." />
+                        <img class="card-img-top img-thumbnail" style="height: 50%;" src="{{ asset('user/assets/img/catalog').'/'.$value->image }}" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">

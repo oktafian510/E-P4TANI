@@ -15,7 +15,7 @@
                     <div class="small text-muted">{{ $value->updated_at }}</div>
                     <h2 class="card-title">{{ $value->title }}</h2>
                     <p class="card-text">{{ $value->description }}</p>
-                    <a class="btn btn-primary" href="{{ url('article/'.$value->id.'/edit') }}">Read more →</a>
+                    <a class="btn btn-success" href="{{ url('article/'.$value->id.'/edit') }}">Read more →</a>
                 </div>
             </div>
             @endforeach
@@ -31,7 +31,7 @@
                             <div class="small text-muted">{{ $value->updated_at }}</div>
                             <h2 class="card-title h4">{{ $value->title }}</h2>
                             <p class="card-text">{{ $value->description }}</p>
-                            <a class="btn btn-primary" href="{{ url('article/'.$value->id.'/edit') }}">Read more →</a>
+                            <a class="btn btn-success btn-sm" href="{{ url('article/'.$value->id.'/edit') }}">Read more →</a>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                 <div class="card-body">
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-success" id="button-search" type="button">Go!</button>
+                        <button class="btn btn-success btn-sm" id="button-search" type="button">Go!</button>
                     </div>
                 </div>
             </div>
