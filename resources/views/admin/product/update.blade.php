@@ -64,7 +64,7 @@
                                 </tr>
                             </tbody>
                             </table>
-                            <button type="submit" class="btn btn-success">SIMPAN</button>
+                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>SIMPAN</button>
                             
                     </form>
             </div>

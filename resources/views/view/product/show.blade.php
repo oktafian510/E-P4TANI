@@ -25,7 +25,6 @@
               <div class="row">
                 
                 <div class="col-12 col-sm-6">
-                  <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
                   <div class="col-12" style="height: 525px;">
                     <img src="{{ asset('admin/dist/img/prod-1.jpg') }}" class="product-image" alt="Product Image">
                   </div>
@@ -49,12 +48,18 @@
                     @foreach($stock as $key=>$value)
                     <label class="btn btn-default text-center">
                       <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
-                      <span class="text-xl">S</span>
+                      <span class="text-xl"> {{ $value->size }} </span>
                       <br>
-                      {{ $value->code }}
+                     {{ $value->stock }}</a>
                     </label>
                     @endforeach
-                    <label class="btn btn-default text-center">
+                    <div class="btn-group">
+                      <a href="#" class="btn btn-primary active" aria-current="page">Active link</a>
+                      <a href="#" class="btn btn-primary">Link</a>
+                      <a href="#" class="btn btn-primary">Link</a>
+                    </div>
+                    
+                    {{-- <label class="btn btn-default text-center">
                       <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
                       <span class="text-xl">M</span>
                       <br>
@@ -71,15 +76,15 @@
                       <span class="text-xl">XL</span>
                       <br>
                       Xtra-Large
-                    </label>
+                    </label> --}}
                   </div>
     
                   <div class="bg-gray py-2 px-3 mt-4">
                     <h2 class="mb-0">
-                      $80.00
+                      {{   $product->priceRange }}
                     </h2>
                     <h4 class="mt-0">
-                      <small>Ex Tax: $80.00 </small>
+                      <small>{{ $product->priceRange }}</small>
                     </h4>
                   </div>
     
