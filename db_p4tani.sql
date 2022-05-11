@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 02:47 PM
+-- Generation Time: May 11, 2022 at 04:01 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -229,7 +229,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2022_04_11_235045_create_products_table', 5),
 (18, '2022_04_11_235243_create_products_table', 6),
 (19, '2022_04_12_001614_create_products_table', 7),
-(20, '2022_04_19_061257_update_products_table', 8);
+(20, '2022_04_19_061257_update_products_table', 8),
+(21, '2022_05_11_013856_create_transaksi_table', 9);
 
 -- --------------------------------------------------------
 
@@ -309,12 +310,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `category`, `nameProduct`, `description`, `image`, `created_at`, `updated_at`, `priceRange`) VALUES
-(2, '80842', 'kaktus', 'Fancy Product', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 17:21:06', '2022-04-18 23:25:18', 'Rp10000 - Rp30000'),
-(5, '80841', 'sukulen', 'Special Item', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 18:05:01', '2022-04-18 23:25:32', 'Rp20000 - Rp40000'),
-(6, '4202', 'kaktus', 'Sale Item', 'merah delima', 'image.jpg', '2022-04-12 19:32:25', '2022-04-18 23:26:15', 'Rp10000 - Rp30000'),
-(7, '8082', 'kaktus', 'Fancy Product', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 17:21:06', '2022-04-18 23:26:27', 'Rp10000 - Rp30000'),
-(8, '8041', 'sukulen', 'Special Item', 'kaktus adalah sebuah', 'image.jpg', '2022-04-11 18:05:01', '2022-04-18 23:26:38', 'Rp20000 - Rp40000'),
-(9, '422', 'kaktus', 'Sale Item', 'merah delima', 'image.jpg', '2022-04-12 19:32:25', '2022-04-18 23:26:49', 'Rp10000 - Rp30000');
+(2, '80842', 'kaktus', 'Fancy Product', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh,', 'image.jpg', '2022-04-11 17:21:06', '2022-04-18 23:25:18', 'Rp10000 - Rp30000'),
+(5, '80841', 'sukulen', 'Special Item', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh,', 'image.jpg', '2022-04-11 18:05:01', '2022-04-18 23:25:32', 'Rp20000 - Rp40000'),
+(6, '4202', 'kaktus', 'Sale Item', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh,', 'image.jpg', '2022-04-12 19:32:25', '2022-04-18 23:26:15', 'Rp10000 - Rp30000'),
+(7, '8082', 'kaktus', 'Fancy Product', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh,', 'image.jpg', '2022-04-11 17:21:06', '2022-04-18 23:26:27', 'Rp10000 - Rp30000'),
+(8, '8041', 'sukulen', 'Special Item', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh,', 'image.jpg', '2022-04-11 18:05:01', '2022-04-18 23:26:38', 'Rp20000 - Rp40000'),
+(9, '422', 'kaktus', 'Sale Item', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh,', 'image.jpg', '2022-04-12 19:32:25', '2022-04-18 23:26:49', 'Rp10000 - Rp30000');
 
 -- --------------------------------------------------------
 
@@ -355,6 +356,26 @@ INSERT INTO `stocks` (`id`, `code`, `size`, `stock`, `price`, `created_at`, `upd
 (22, '422', 'small', 10, 100000.00, '2022-04-18 07:26:27', '2022-04-18 07:30:33'),
 (23, '422', 'standart', 10, 200000.00, '2022-04-18 07:26:38', '2022-04-18 07:30:38'),
 (24, '422', 'big', 10, 300000.00, '2022-04-18 07:26:52', '2022-04-18 07:30:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `codeTransaksi` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `size` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` double(30,2) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total` double(30,2) NOT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -476,6 +497,12 @@ ALTER TABLE `stocks`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD UNIQUE KEY `transaksi_codetransaksi_unique` (`codeTransaksi`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -533,7 +560,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
