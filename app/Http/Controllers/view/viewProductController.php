@@ -4,6 +4,7 @@ namespace App\Http\Controllers\view;
 
 use App\Http\Controllers\Controller;
 use App\Models\about;
+use App\Models\poster;
 use App\Models\product;
 use App\Models\stock;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ class viewProductController extends Controller
     {
         //
         $title = 'PRODUCT';
+        $poster = poster::all();
         $about = about::limit(1)->get();
         $product = product::all();
         $stock = stock::all();
@@ -26,7 +28,8 @@ class viewProductController extends Controller
             'title',
             'product',
             'about',
-            'stock'
+            'stock',
+            'poster'
         ]));
     }
 
@@ -64,6 +67,7 @@ class viewProductController extends Controller
         $about = about::limit(1)->get();
         $product = product::find($id);
         $stock = stock::where('code', $product->code)->get();
+        // return $product . "<br><br><br>" . $stock;
         return view('view.product.show', compact([
             'title',
             'product',
@@ -80,7 +84,27 @@ class viewProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $explode = explode(",", $id);
+        $code = $explode[0];
+        $size = $explode[1];
+        // return $size . $code;
+        $title = 'PRODUCT';
+        $about = about::limit(1)->get();
+        $products = product::where('code', $code)->get();
+        $product = $products[0];
+        $stock = stock::where('code', $code)->get();
+        $stockActive = stock::where('code', $code)->where('size', $size)->get();
+        $stockActived = $stockActive[0];
+        // return $stock;
+        // return $product . "<br><br><br>" . $stockActive . "<br><br><br>" . $stockActived;
+        return view('view.product.detail', compact([
+            'title',
+            'product',
+            'about',
+            'size',
+            'stockActived',
+            'stock'
+        ]));
     }
 
     /**
