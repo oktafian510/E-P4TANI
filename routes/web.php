@@ -13,6 +13,7 @@ use App\Http\Controllers\akun\registerController;
 use App\Http\Controllers\view\viewArticleController;
 use App\Http\Controllers\view\viewController;
 use App\Http\Controllers\view\viewProductController;
+use App\Http\Controllers\test\test;
 use App\Models\about;
 use App\Models\article;
 use App\Models\member;
@@ -35,6 +36,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('view.product.show', compact(['title', 'about']));
 // });
 route::get('/', [viewController::class, 'home']);
+
 
 // route::get('/home', [viewController::class, 'home']);
 // routing untuk user
