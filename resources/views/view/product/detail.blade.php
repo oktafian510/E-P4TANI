@@ -67,7 +67,18 @@
                   <div class="mt-4">
                     <div class="btn btn-primary btn-lg btn-flat">
                       <i class="fas fa-cart-plus fa-lg mr-2"></i>
+                      @auth
+                      <form action="">
+                        <input type="text" name="" id="" value="{{ auth()->user()->id  }}"> 
+                        <input type="text" name="" id="" value="{{ $stockActived->code }}">
+                        <input type="text" name="" id="" value="{{ $stockActived->size }}">
+                        <input type="text" name="" id="" value="{{ $product->nameProduct }}">
+
+                        <button>add</button>
+                      </form>
+                      @else
                       Add to Cart
+                      @endauth
                     </div>
     
                     {{-- <div class="btn btn-default btn-lg btn-flat">

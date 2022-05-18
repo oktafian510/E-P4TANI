@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2022 at 04:01 AM
+-- Generation Time: May 18, 2022 at 04:54 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -408,7 +408,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `access`, `address`, `city`, `province`, `gender`, `hp`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(8, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$HV6pSq5weTd8vvNiCLTUjuVof.xBtN5oJXx9lbCsLrQ5qA1CkiyYa', '-', '-', '-', '-', '-', '-', '-', '-', NULL, '2022-04-13 20:23:10', '2022-04-13 20:23:10');
+(9, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$5XAJkKwsXY3l0e9tUFkNvO.PYWpKLgdnL1VhWqqTn0TxRV.pCs9u6', '-', '-', '-', '-', '-', '-', '-', '-', NULL, '2022-05-17 19:23:06', '2022-05-17 19:23:06');
 
 --
 -- Indexes for dumped tables
@@ -590,7 +590,7 @@ ALTER TABLE `stocks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
