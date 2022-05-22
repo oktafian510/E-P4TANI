@@ -33,9 +33,26 @@
                     <div class="card bg-light">
                         <div class="card-body">
                             <!-- Comment form-->
-                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                            @auth
+                            <form action="{{ url('articleComments') }}" method="POST" class="mb-4">
+                                @csrf
+                                <textarea name="comments" id="comments" class="form-control" rows="3" placeholder="Write Your Comment ..." required></textarea>
+                                <input type="text" hidden name="idArticle" id="idArticle" value="{{ $article->id }}"> 
+                                <input type="text" hidden name="idUser" id="idUser" value="{{ auth()->user()->id  }}"> 
+                                <input type="text" hidden name="name" id="name" value="{{ auth()->user()->name  }}"> 
+                                <input type="text" hidden name="image" id="image" value="{{ auth()->user()->image  }}"> 
+                                <br><button type="submit" class="btn btn-block btn-success" >Send</button>
+                            </form>
+                            @else
+                                <br> 
+                                <form action="{{ url('login') }}" method="GET">
+                                @csrf
+                                <textarea name="comments" id="comments" class="form-control" rows="3" placeholder="Write Your Comment ..." required></textarea>
+                                <br><button type="submit" class="btn btn-block btn-success" >Send</button> 
+                                </form>
+                            @endauth
                             <!-- Comment with nested comments-->
-                            <div class="d-flex mb-4">
+                            {{-- <div class="d-flex mb-4">
                                 <!-- Parent comment-->
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                 <div class="ms-3">
@@ -58,15 +75,18 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Single comment-->
+                            <br>
+                            @foreach($comments as $key=>$value)
                             <div class="d-flex">
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                 <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                                    <div class="fw-bold">{{ $value->name }}</div>
+                                     {{ $value->comments }}
                                 </div>
-                            </div>
+                            </div><br>
+                            @endforeach
                         </div>
                     </div>
                 </section>

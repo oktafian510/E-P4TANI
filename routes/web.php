@@ -14,6 +14,7 @@ use App\Http\Controllers\view\viewArticleController;
 use App\Http\Controllers\view\viewController;
 use App\Http\Controllers\view\viewProductController;
 use App\Http\Controllers\test\test;
+use App\Http\Controllers\view\articleCommentController;
 use App\Models\about;
 use App\Models\article;
 use App\Models\member;
@@ -72,6 +73,7 @@ Route::resource('adminMember', memberController::class);
 Route::resource('adminCategory', categoryController::class);
 Route::resource('adminProduct', productController::class);
 Route::resource('adminStock', stokController::class);
+Route::resource('articleComments', articleCommentController::class);
 
 
 // Route::resource('adminAbout', aboutController::class);

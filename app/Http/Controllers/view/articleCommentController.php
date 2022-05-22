@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\view;
 
 use App\Http\Controllers\Controller;
-use App\Models\categorie;
-use App\Models\article;
-use App\Models\about;
 use App\Models\article_comment;
 use Illuminate\Http\Request;
 
-class viewArticleController extends Controller
+class articleCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,21 +16,6 @@ class viewArticleController extends Controller
     public function index()
     {
         //
-        $hide = 'show';
-        $title = 'ARTICLE';
-        $categorie = categorie::all();
-        $about = about::limit(1)->get();
-        $article = article::all();
-        $articlePost = article::limit(1)->get();
-        return view('view.article.index', compact([
-            'hide',
-            'title',
-            'articlePost',
-            'about',
-            'categorie',
-            'article'
-
-        ]));
     }
 
     /**
@@ -55,6 +37,14 @@ class viewArticleController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new article_comment;
+        $model->idArticle = $request->idArticle;
+        $model->idUser = $request->idUser;
+        $model->comments = $request->comments;
+        $model->name = $request->name;
+        $model->image = $request->image;
+        $model->save();
+        return redirect('article/' . $request->idArticle . '/edit');
     }
 
     /**
@@ -63,23 +53,9 @@ class viewArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($category)
+    public function show($id)
     {
         //
-        $title = 'ARTICLE';
-        $hide = 'hide';
-        $categorie = categorie::all();
-        $about = about::limit(1)->get();
-        $article = article::where('category', $category)->get();
-        $articlePost = article::limit(1)->get();
-        return view('view.article.index', compact([
-            'hide',
-            'title',
-            'articlePost',
-            'about',
-            'categorie',
-            'article'
-        ]));
     }
 
     /**
@@ -91,21 +67,6 @@ class viewArticleController extends Controller
     public function edit($id)
     {
         //
-        $hide = 'show';
-        $title = 'ARTICLE';
-        $categorie = categorie::all();
-        $about = about::limit(1)->get();
-        $article = article::find($id);
-        $comments = article_comment::where('idArticle', $id)->get();
-        return view('view.article.show', compact([
-            'hide',
-            'title',
-            'about',
-            'categorie',
-            'article',
-            'comments'
-
-        ]));
     }
 
     /**
