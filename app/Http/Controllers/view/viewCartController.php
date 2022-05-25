@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\view;
 
 use App\Http\Controllers\Controller;
+use App\Models\about;
+use App\Models\cart;
 use Illuminate\Http\Request;
 
 class viewCartController extends Controller
@@ -15,6 +17,9 @@ class viewCartController extends Controller
     public function index()
     {
         //
+        $cart = cart::all();
+
+        return $cart;
     }
 
     /**
@@ -27,6 +32,7 @@ class viewCartController extends Controller
         //
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -36,6 +42,17 @@ class viewCartController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new cart;
+        $model->code = $request->code;
+        $model->quantity = $request->quantity;
+        $model->price = $request->price;
+        $model->id_users = $request->id_users;
+        $model->nameProduct = $request->nameProduct;
+        $model->size = $request->size;
+        $model->status = "ready";
+        $model->image = $request->image;
+        $model->save();
+        return redirect('product/' . $request->code . ',' . $request->size . '/edit');
     }
 
     /**
@@ -47,6 +64,16 @@ class viewCartController extends Controller
     public function show($id)
     {
         //
+        $title = 'PRODUCT';
+        $about = about::limit(1)->get();
+        $cart = cart::where('id_Users', $id)->get();
+        // return $cart;
+        return view('view.cart.index', compact([
+            'title',
+            'about',
+            'cart'
+
+        ]));
     }
 
     /**

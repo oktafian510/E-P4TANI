@@ -15,7 +15,7 @@ class CreateTransaksiTable extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->string('codeTransaksi', 100)->unique();
-            $table->string('username');
+            $table->string('idUser');
             $table->string('code', 100);
             $table->string('size', 30);
             $table->float('price', 30);

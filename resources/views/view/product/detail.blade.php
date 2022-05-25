@@ -63,23 +63,34 @@
                       <small>{{ $product->priceRange }}</small>
                     </h4>
                   </div>
-    
-                  <div class="mt-4">
-                    <div class="btn btn-primary btn-lg btn-flat">
-                      <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                      @auth
-                      <form action="">
-                        <input type="text" name="" id="" value="{{ auth()->user()->id  }}"> 
-                        <input type="text" name="" id="" value="{{ $stockActived->code }}">
-                        <input type="text" name="" id="" value="{{ $stockActived->size }}">
-                        <input type="text" name="" id="" value="{{ $product->nameProduct }}">
 
-                        <button>add</button>
+                  <div class="mt-4">
+                    
+                      @auth
+                      <form action="{{ url('cart') }}" method="POST">
+                        @csrf
+                        <div class="btn btn-primary btn-flat">
+                          <input   type="number" name="quantity" id="quantity" value="1">
+                        </div>
+                        <input hidden type="text" name="id_users" id="id_users" value="{{ auth()->user()->id  }}"> 
+                        <input hidden type="text" name="code" id="code" value="{{ $stockActived->code }}">
+                        <input hidden type="text" name="size" id="size" value="{{ $stockActived->size }}">
+                        <input hidden type="text" name="price" id="price" value="{{ $stockActived->price }}">
+                        <input hidden type="text" name="nameProduct" id="nameProduct" value="{{ $product->nameProduct }}">
+                        <input hidden type="text" name="image" id="image" value="{{ $product->image }}">
+                        <button class="btn btn-primary btn-lg btn-flat">
+                        <i class="fas fa-cart-plus fa-lg mr-2"></i>Add to Cart
+                        </button>
+
                       </form>
                       @else
-                      Add to Cart
+                      <div class="btn btn-primary btn-flat">
+                        <input   type="number" name="quantity" id="quantity" value="1">
+                      </div>
+                      <button class="btn btn-primary btn-lg btn-flat">
+                        <i class="fas fa-cart-plus fa-lg mr-2"></i>Add to Cart
+                        </button>
                       @endauth
-                    </div>
     
                     {{-- <div class="btn btn-default btn-lg btn-flat">
                       <i class="fas fa-heart fa-lg mr-2"></i>
