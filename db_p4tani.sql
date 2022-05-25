@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2022 at 04:54 AM
+-- Generation Time: May 25, 2022 at 03:42 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -80,6 +80,29 @@ INSERT INTO `articles` (`id`, `title`, `description`, `writer`, `category`, `ima
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `article_comments`
+--
+
+CREATE TABLE `article_comments` (
+  `idArticle` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idUser` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comments` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `article_comments`
+--
+
+INSERT INTO `article_comments` (`idArticle`, `idUser`, `comments`, `created_at`, `updated_at`, `name`, `image`) VALUES
+('3', '9', 'tets', '2022-05-24 11:49:20', '2022-05-24 11:49:20', 'Oktafian Dwi Cahyono', '-');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `carts`
 --
 
@@ -96,6 +119,13 @@ CREATE TABLE `carts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`id`, `code`, `id_users`, `nameProduct`, `size`, `quantity`, `price`, `status`, `image`, `created_at`, `updated_at`) VALUES
+(1, '80842', 9, 'Fancy Product', 'standart', 1, 200000.00, 'ready', 'image.jpg', '2022-05-24 11:49:35', '2022-05-24 11:49:35');
 
 -- --------------------------------------------------------
 
@@ -217,20 +247,16 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2022_04_11_150530_create_faqs_table', 1),
 (6, '2022_04_11_151316_create_abouts_table', 1),
 (7, '2022_04_11_151415_create_articles_table', 1),
-(8, '2022_04_11_151443_create_landing_pages_table', 1),
-(9, '2022_04_11_151508_create_members_table', 1),
-(10, '2022_04_11_151547_create_carts_table', 1),
-(11, '2022_04_11_151604_create_categories_table', 1),
-(12, '2022_04_11_151656_create_products_table', 1),
-(13, '2022_04_11_151717_create_stocks_table', 1),
-(14, '2022_04_11_182635_create_posters_table', 2),
-(15, '2022_04_11_183522_create_posters_table', 3),
-(16, '2022_04_11_183613_create_posters_table', 4),
-(17, '2022_04_11_235045_create_products_table', 5),
-(18, '2022_04_11_235243_create_products_table', 6),
-(19, '2022_04_12_001614_create_products_table', 7),
-(20, '2022_04_19_061257_update_products_table', 8),
-(21, '2022_05_11_013856_create_transaksi_table', 9);
+(8, '2022_04_11_151508_create_members_table', 1),
+(9, '2022_04_11_151547_create_carts_table', 1),
+(10, '2022_04_11_151604_create_categories_table', 1),
+(11, '2022_04_11_151717_create_stocks_table', 1),
+(12, '2022_04_11_183613_create_posters_table', 1),
+(13, '2022_04_12_001614_create_products_table', 1),
+(14, '2022_04_19_061257_update_products_table', 1),
+(15, '2022_05_11_013856_create_transaksi_table', 1),
+(16, '2022_05_22_045812_create_article_comments_table', 1),
+(17, '2022_05_22_055252_update_article_comments_table', 1);
 
 -- --------------------------------------------------------
 
@@ -365,7 +391,7 @@ INSERT INTO `stocks` (`id`, `code`, `size`, `stock`, `price`, `created_at`, `upd
 
 CREATE TABLE `transaksi` (
   `codeTransaksi` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idUser` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `code` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `size` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double(30,2) NOT NULL,
@@ -530,7 +556,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -560,7 +586,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -578,7 +604,7 @@ ALTER TABLE `posters`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `stocks`
