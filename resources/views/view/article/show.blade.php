@@ -80,7 +80,7 @@
                             <br>
                             @foreach($comments as $key=>$value)
                             <div class="d-flex">
-                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                <div class="flex-shrink-0"><img class="rounded-circle" style="width:50px ;" src="{{ asset('user/assets/img/profil/'.$value->image) }}" alt="..." /></div>
                                 <div class="ms-3">
                                     <div class="fw-bold">{{ $value->name }}</div>
                                      {{ $value->comments }}

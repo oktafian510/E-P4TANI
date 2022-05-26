@@ -15,6 +15,7 @@ use App\Http\Controllers\view\viewController;
 use App\Http\Controllers\view\viewProductController;
 use App\Http\Controllers\test\test;
 use App\Http\Controllers\view\articleCommentController;
+use App\Http\Controllers\view\profilUserController;
 use App\Http\Controllers\view\viewCartController;
 use App\Models\about;
 use App\Models\article;
@@ -76,6 +77,7 @@ Route::resource('adminProduct', productController::class);
 Route::resource('adminStock', stokController::class);
 Route::resource('articleComments', articleCommentController::class);
 Route::resource('cart', viewCartController::class);
+Route::resource('profilUser', profilUserController::class);
 
 
 // Route::resource('adminAbout', aboutController::class);

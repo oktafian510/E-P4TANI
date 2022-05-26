@@ -48,7 +48,7 @@
       <!-- /.card -->
     </div>
 </div><br>
-<div class="row">
+{{-- <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -88,6 +88,6 @@
       </div>
       <!-- /.card -->
     </div>
-</div>
+</div> --}}
 
 @endsection

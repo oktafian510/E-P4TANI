@@ -61,7 +61,7 @@ class registercontroller extends Controller
         $model->city = '-';
         $model->province = '-';
         $model->gender = '-';
-        $model->image = '-';
+        $model->image = 'default.jpg';
         $model->status = '-';
         $model->username = $validateRegister['username'];
         $model->password = $validateRegister['password'];
