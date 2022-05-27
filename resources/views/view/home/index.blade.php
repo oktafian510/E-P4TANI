@@ -112,7 +112,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 border-gray border-5">
                             <!-- Product image-->
-                            <img class="card-img-top img-thumbnail" style="height: 50%;" src="{{ asset('user/assets/img/catalog').'/'.$value->image }}" alt="..." />
+                            <img class="card-img-top img-thumbnail" style="height: 50%;" src="{{ asset('storage/'.$value->image) }}" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

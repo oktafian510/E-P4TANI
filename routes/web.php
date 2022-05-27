@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\faqController;
 use App\Http\Controllers\admin\memberController;
 use App\Http\Controllers\admin\posterController;
 use App\Http\Controllers\admin\productController;
+use App\Http\Controllers\admin\productImageController;
 use App\Http\Controllers\admin\stokController;
 use App\Http\Controllers\akun\loginController;
 use App\Http\Controllers\akun\registerController;
@@ -79,6 +80,7 @@ Route::resource('adminStock', stokController::class);
 Route::resource('articleComments', articleCommentController::class);
 Route::resource('cart', viewCartController::class);
 Route::resource('profilUser', profilUserController::class);
+Route::resource('productImage', productImageController::class);
 
 
 // Route::resource('adminAbout', aboutController::class);

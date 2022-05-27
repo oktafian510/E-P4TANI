@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\about;
 use App\Models\poster;
 use App\Models\product;
+use App\Models\product_image;
 use App\Models\stock;
 use Illuminate\Http\Request;
 
@@ -67,12 +68,15 @@ class viewProductController extends Controller
         $about = about::limit(1)->get();
         $product = product::find($id);
         $stock = stock::where('code', $product->code)->get();
+        $product_image = product_image::where('code', $product->code)->get();
         // return $product . "<br><br><br>" . $stock;
         return view('view.product.show', compact([
             'title',
             'product',
             'about',
-            'stock'
+            'stock',
+            'product_image'
+
         ]));
     }
 
@@ -92,6 +96,7 @@ class viewProductController extends Controller
         $about = about::limit(1)->get();
         $products = product::where('code', $code)->get();
         $product = $products[0];
+        $product_image = product_image::where('code', $code)->get();
         $stock = stock::where('code', $code)->get();
         $stockActive = stock::where('code', $code)->where('size', $size)->get();
         $stockActived = $stockActive[0];
@@ -103,6 +108,7 @@ class viewProductController extends Controller
             'about',
             'size',
             'stockActived',
+            'product_image',
             'stock'
         ]));
     }

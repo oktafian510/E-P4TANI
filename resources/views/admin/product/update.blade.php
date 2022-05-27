@@ -3,7 +3,7 @@
         <!-- baru -->
         <div class="container">
             <div class="card-body">
-                    <form action="{{ url('adminProduct/'.$model->id) }}" method="POST">
+                    <form action="{{ url('adminProduct/'.$model->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="_method" value="PATCH">
                         <table class="table col-sm-6">
@@ -54,17 +54,22 @@
                                     <input type="text" name="priceRange" value="{{ $model->priceRange }}" id="priceRange">
                                     </td>
                                 </tr>
+                              
                                 <tr>
                                     <th scope="row">
                                         <label for="image">image</label>
                                     </th>
                                     <td>
-                                    <input type="text" name="image" value="{{ $model->image }}" id="image">
+                                    <img style="width: 150px" src="{{ asset('storage/'.$model->image) }}" alt="">
+                                    <input hidden type="text" name="image1" value="{{ $model->image }}" id="image1">
+                                        <div class="form-group">
+                                            <input type="file" class="form-control-file"  name="image"  id="image">
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
                             </table>
-                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>SIMPAN</button>
+                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> SIMPAN</button>
                             
                     </form>
             </div>

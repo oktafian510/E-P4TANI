@@ -26,15 +26,13 @@
                 
                 <div class="col-12 col-sm-6">
                   <div class="col-12" style="height: 525px;">
-                    <img src="{{ asset('admin/dist/img/prod-1.jpg') }}" class="product-image" alt="Product Image">
+                    <img src="{{ asset('storage/'.$product->image) }}" class="product-image" alt="Product Image">
                   </div>
                   <div class="col-12 product-image-thumbs">
-                    <div class="product-image-thumb active"><img src="{{ asset('admin/dist/img/prod-1.jpg') }}" alt="Product Image"></div>
-                    <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-2.jpg') }}" alt="Product Image"></div>
-                    <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-3.jpg') }}" alt="Product Image"></div>
-                    <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-4.jpg') }}" alt="Product Image"></div>
-                    <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-5.jpg') }}" alt="Product Image"></div>
-                    
+                    <div class="product-image-thumb active"><img src="{{ asset('storage/'.$product->image) }}" alt="Product Image"></div>
+                    @foreach($product_image as $key=>$value)
+                      <div class="product-image-thumb" ><img src="{{ asset('storage/'.$value->image) }}" alt="Product Image"></div>
+                    @endforeach
                   </div>
                 </div>
                 <div class="col-12 col-sm-6">

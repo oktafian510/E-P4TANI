@@ -25,10 +25,11 @@
                             <td>{{ $value->nameProduct }}</td>
                             <td>{{ $value->description }}</td>
                             <td>{{ $value->priceRange }}</td>
-                            <td>{{ $value->image }}</td>
+                            <td><img style="width: 150px" src="{{ asset('storage/'.$value->image) }}" alt=""></td>
                             <td>
                               <form action="{{ url('adminProduct/'.$value->id) }}" method="POST">
                                 @csrf
+                                <a class="btn btn-success" href="{{ url('productImage/'.$value->id) }}"><i class="fas fa-plus"></i>ADD Img</a>
                                 <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Update</a>
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>

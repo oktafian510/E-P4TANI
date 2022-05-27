@@ -56,13 +56,15 @@ class productController extends Controller
     public function store(Request $request)
     {
         //
+        // return $request->file('image')->store('post-images');
         $model = new product;
         $model->code = $request->code;
         $model->category = $request->category;
         $model->nameProduct = $request->nameProduct;
         $model->description = $request->description;
         $model->priceRange = $request->priceRange;
-        $model->image = $request->image;
+        // $model->image = $request->image;
+        $model->image = $request->file('image')->store('post-images');
         $model->save();
         return redirect('adminProduct');
     }
@@ -113,7 +115,11 @@ class productController extends Controller
         $model->nameProduct = $request->nameProduct;
         $model->description = $request->description;
         $model->priceRange = $request->priceRange;
-        $model->image = $request->image;
+        if ($request->file('image')) {
+            $model->image = $request->file('image')->store('post-images');
+        } else {
+            $model->image = $request->image1;
+        }
         $model->save();
         return redirect('adminProduct');
     }

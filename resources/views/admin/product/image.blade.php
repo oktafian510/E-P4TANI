@@ -3,7 +3,7 @@
 <!-- baru -->
 <div class="container">
     <div class="card-body">
-            <form action="{{ url('adminProduct') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('productImage') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <table class="table col-sm-6">
                     <thead class=" table-dark">
@@ -19,20 +19,16 @@
                                 <label for="code">Code</label>
                             </th>
                             <td>
-                                <input type="text" name="code"  id="code">
+                                <input disabled type="text"  value="{{ $model->code }}">
+                                <input hidden type="text" name="code" value="{{ $model->code }}" id="code">
                             </td>
                         </tr>
-
                         <tr>
                             <th scope="row">
                                 <label for="category">Category</label>
                             </th>
                             <td>
-                            <select class="form-control" name="category" id="category" style="width: 100px">
-                                @foreach ($category as $key=>$value)
-                                    <option>{{ $value->name }}</option>
-                                @endforeach
-                            </select>
+                                <input disabled type="text"  value="{{ $model->category }}" >
                             </td>
                         </tr>
                         <tr>
@@ -40,31 +36,17 @@
                                 <label for="nameProduct" class="">Name Product</label>
                             </th>
                             <td>
-                            <input type="text" name="nameProduct"  id="nameProduct">
+                                <input type="text" disabled value="{{ $model->nameProduct }}" >
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="description">description</label>
-                            </th>
-                            <td>
-                            <input type="text" name="description"  id="description">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="priceRange">Price</label>
-                            </th>
-                            <td>
-                            <input type="text" name="priceRange"  id="priceRange">
-                            </td>
-                        </tr>
+                       
                         <tr>
                             <th scope="row">
                                 <label for="image">image</label>
                             </th>
                             <td>
                                 <div class="form-group">
+                                    <img style="width: 150px" src="{{ asset('storage/'.$model->image) }}" alt="">
                                     <input type="file" class="form-control-file"  name="image"  id="image">
                                 </div>
                             </td>
