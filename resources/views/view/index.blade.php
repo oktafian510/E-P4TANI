@@ -39,7 +39,7 @@
 	    <div class="container d-flex align-items-center justify-content-between">
 	      <h1 class="logo">
 			<a href="index.html">
-			<img style="margin-right: -4px; padding-top:-10px; " src="{{ asset('user/assets/img/iconTest/logo.png') }}" alt="">  
+			<img style="margin-right: -4px; padding-top:10px; " src="{{ asset('user/assets/img/iconTest/logo.png') }}" alt="">  
 			4TANI
 			</a>
 		</h1>
