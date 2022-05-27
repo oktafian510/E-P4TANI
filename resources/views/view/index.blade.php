@@ -37,12 +37,12 @@
 	<!-- ======= Header ======= -->
 	<header id="header" class="fixed-top" style="background-color: #3cd407;">
 	    <div class="container d-flex align-items-center justify-content-between">
-	      <h1 class="logo">
-			<a href="index.html">
-			<img style="margin-right: -4px; padding-top:10px; " src="{{ asset('user/assets/img/iconTest/logo.png') }}" alt="">  
-			4TANI
-			</a>
-		</h1>
+			<div class="logo">
+				<a href="index.html">
+				<img style="margin-right: -4px; width: 50px " src="{{ asset('user/assets/img/iconTest/logo.png') }}" alt="">  
+				<span style="margin-top:10px ;">4TANI</span>
+				</a>
+			</div>
 	      <!-- Uncomment below if you prefer to use an image logo -->
 	      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 		  
