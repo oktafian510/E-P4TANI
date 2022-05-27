@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2022 at 03:42 AM
+-- Generation Time: May 27, 2022 at 01:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -98,7 +98,8 @@ CREATE TABLE `article_comments` (
 --
 
 INSERT INTO `article_comments` (`idArticle`, `idUser`, `comments`, `created_at`, `updated_at`, `name`, `image`) VALUES
-('3', '9', 'tets', '2022-05-24 11:49:20', '2022-05-24 11:49:20', 'Oktafian Dwi Cahyono', '-');
+('3', '9', 'ini test koment', '2022-05-26 04:39:24', '2022-05-26 04:39:24', 'Oktafian Dwi Cahyono', 'team-1.jpg'),
+('3', '11', 'oke', '2022-05-26 05:08:48', '2022-05-26 05:08:48', 'KangTelor', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,8 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `code`, `id_users`, `nameProduct`, `size`, `quantity`, `price`, `status`, `image`, `created_at`, `updated_at`) VALUES
-(1, '80842', 9, 'Fancy Product', 'standart', 1, 200000.00, 'ready', 'image.jpg', '2022-05-24 11:49:35', '2022-05-24 11:49:35');
+(1, '80842', 9, 'Fancy Product', 'standart', 1, 200000.00, 'ready', 'image.jpg', '2022-05-24 11:49:35', '2022-05-24 11:49:35'),
+(2, '80842', 9, 'Fancy Product', 'standart', 11, 200000.00, 'ready', 'image.jpg', '2022-05-24 19:06:08', '2022-05-24 19:06:08');
 
 -- --------------------------------------------------------
 
@@ -434,7 +436,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `access`, `address`, `city`, `province`, `gender`, `hp`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(9, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$5XAJkKwsXY3l0e9tUFkNvO.PYWpKLgdnL1VhWqqTn0TxRV.pCs9u6', '-', '-', '-', '-', '-', '-', '-', '-', NULL, '2022-05-17 19:23:06', '2022-05-17 19:23:06');
+(9, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$5XAJkKwsXY3l0e9tUFkNvO.PYWpKLgdnL1VhWqqTn0TxRV.pCs9u6', '-', '-', '-', '-', '-', '-', 'team-1.jpg', '-', NULL, '2022-05-17 19:23:06', '2022-05-17 19:23:06');
 
 --
 -- Indexes for dumped tables
@@ -556,7 +558,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -616,7 +618,7 @@ ALTER TABLE `stocks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

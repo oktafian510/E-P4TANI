@@ -1,0 +1,7 @@
+CREATE USER 'okta'@'localhost' IDENTIFIED BY 'Oktafiandc510';
+
+GRANT ALL PRIVILEGES ON * . * TO 'okta'@'localhost';
+
+FLUSH PRIVILEGES;
+
+https://www.niagahoster.co.id/blog/cara-install-laravel-di-ubuntu/
