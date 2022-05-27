@@ -24,7 +24,9 @@ class loginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
+            if (auth()->user()->status === 'admin') {
+                return redirect()->intended('/adminProduct');
+            }
             return redirect()->intended('/');
         }
 

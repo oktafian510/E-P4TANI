@@ -171,6 +171,12 @@
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
         </div>
+        <div class="info">
+          <form action="/logout" method="POST">
+						@csrf
+						<button type="submit" class="btn btn-outline-success btn-sm">LogOut</button>
+					  </form>
+        </div>
       </div>
 
       <!-- SidebarSearch Form -->
