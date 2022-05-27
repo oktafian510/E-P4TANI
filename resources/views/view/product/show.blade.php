@@ -34,6 +34,7 @@
                     <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-3.jpg') }}" alt="Product Image"></div>
                     <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-4.jpg') }}" alt="Product Image"></div>
                     <div class="product-image-thumb" ><img src="{{ asset('admin/dist/img/prod-5.jpg') }}" alt="Product Image"></div>
+                    
                   </div>
                 </div>
                 <div class="col-12 col-sm-6">
