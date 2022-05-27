@@ -44,22 +44,22 @@
 	      <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto {{ ($title === "HOME") ? 'active' : ' ' }}" href="/">Home</a></li>
-              <li><a class="nav-link scrollto {{ ($title === "ARTICLE") ? 'active' : ' ' }}" href="{{ url('article/') }}">Article</a></li>
-              <li><a class="nav-link scrollto {{ ($title === "PRODUCT") ? 'active' : ' ' }}" href="{{ url('product/') }}">Product</a></li>
-              <li class="dropdown"><a class="" href="#"><span>Other Page</span> <i class="bi bi-chevron-down"></i></a>
+              <li><a class="nav-link scrollto {{ ($title === "ARTICLE") ? 'active' : ' ' }}" href="/article">Article</a></li>
+              <li><a class="nav-link scrollto {{ ($title === "PRODUCT") ? 'active' : ' ' }}" href="/product">Product</a></li>
+              <li class="dropdown"><a class="{{ ($title === "ABOUT" || $title === "FAQ" || $title === "MEMBER") ? 'active' : ' ' }}" href="#"><span>Other Page</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a class=""  {{ ($title === "ABOUT") ? 'active' : ' ' }} href="/about">About</a></li>
-                  <li><a class="" {{ ($title === "FAQ") ? 'active' : ' ' }}href="/faq">FAQ</a></li>
-                  <li><a class="" {{ ($title === "MEMBER") ? 'active' : ' ' }}href="/member">Member</a></li>
+                  <li><a class="  {{ ($title === "ABOUT") ? 'active' : ' ' }}" href="/about">About</a></li>
+                  <li><a class=" {{ ($title === "FAQ") ? 'active' : ' ' }}" href="/faq">FAQ</a></li>
+                  <li><a class=" {{ ($title === "MEMBER") ? 'active' : ' ' }}" href="/member">Member</a></li>
                 </ul>
               </li>
               {{-- <li><a class="nav-link scrollto" href="/login" data-bs-toggle="modal" data-bs-target="#SignIn">Sign In</a></li> --}}
 
 			  @auth
-			  <li class="dropdown"><a class="" href="#"><span>{{ auth()->user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
+			  <li class="dropdown"><a class="{{ ($title === "PROFIL" || $title === "CART") ? 'active' : ' ' }}" href="#"><span>{{ auth()->user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a class="" href="{{ url('profilUser/') }}">My Profile</a></li>
-                  <li><a class="" href="{{ url('cart/'.auth()->user()->id) }}">Cart</a></li>
+                  <li><a class="{{ ($title === "PROFIL") ? 'active' : ' ' }}" href="{{ url('profilUser/') }}">My Profile</a></li>
+                  <li><a class="{{ ($title === "CART") ? 'active' : ' ' }}" href="{{ url('cart/'.auth()->user()->id) }}">Cart</a></li>
 				  <li>
 					  <form action="/logout" method="POST">
 						@csrf

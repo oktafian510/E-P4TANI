@@ -17,7 +17,7 @@ class profilUserController extends Controller
     public function index()
     {
         //
-        $title = 'PRODUCT';
+        $title = 'PROFIL';
         $about = about::limit(1)->get();
         // return $profilUser;
         return view('view.profil.index', compact([
@@ -57,7 +57,7 @@ class profilUserController extends Controller
     public function show($id)
     {
         //
-        $title = 'PRODUCT';
+        $title = 'PROFIL';
         $about = about::limit(1)->get();
         $profilUser = User::find($id);
         // return $profilUser;

@@ -64,7 +64,7 @@ class viewCartController extends Controller
     public function show($id)
     {
         //
-        $title = 'PRODUCT';
+        $title = 'CART';
         $about = about::limit(1)->get();
         $cart = cart::where('id_Users', $id)->get();
         // return $cart;
@@ -85,7 +85,7 @@ class viewCartController extends Controller
     public function edit($id)
     {
         //
-        $title = 'PRODUCT';
+        $title = 'CART';
         $about = about::limit(1)->get();
         $cart = cart::find($id);
 
