@@ -44,6 +44,7 @@ route::get('/', [viewController::class, 'home']);
 // route::get('/home', [viewController::class, 'home']);
 // routing untuk user
 route::get('/about', [viewController::class, 'about']);
+// route::get('/about', [viewController::class, 'about'])->middleware('auth');
 route::get('/faq', [viewController::class, 'faq']);
 route::get('/member', [viewController::class, 'member']);
 

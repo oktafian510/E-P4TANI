@@ -39,8 +39,8 @@
 	    <div class="container d-flex align-items-center justify-content-between">
 			<div class="logo">
 				<a href="index.html">
-				<img style="margin-right: -4px; width: 50px " src="{{ asset('user/assets/img/iconTest/logo.png') }}" alt="">  
-				<span style="margin-top:10px ;">4TANI</span>
+				<img style="margin-right: -4px; width: 50px " src="{{ asset('user/assets/img/iconTest/logo.png') }}" alt=""> 
+				<span style="padding-top:10px;">TANI</span>
 				</a>
 			</div>
 	      <!-- Uncomment below if you prefer to use an image logo -->

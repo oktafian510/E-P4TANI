@@ -66,10 +66,16 @@
                   </div>
     
                   <div class="mt-4">
-                    <div class="btn btn-primary btn-lg btn-flat">
-                      <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                      Add to Cart
-                    </div>
+                    <form action="" method="get" onSubmit="validasi()">
+                      <div>
+                        <input hidden type="text" name="ceksize" id="ceksize" />
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-lg btn-flat">
+                        <i class="fas fa-cart-plus fa-lg mr-2"></i>
+                        Add to Cart
+                      </button>
+                      
+                    </form>
     
                     {{-- <div class="btn btn-default btn-lg btn-flat">
                       <i class="fas fa-heart fa-lg mr-2"></i>
@@ -134,5 +140,15 @@
       $(this).addClass('active')
     })
   })
+</script>
+<script type="text/javascript">
+	function validasi() {
+		var ceksize = document.getElementById("ceksize").value;
+		if (ceksize != "") {
+			return true;
+		}else{
+			alert('Please select size !');
+		}
+	}
 </script>
 @endsection

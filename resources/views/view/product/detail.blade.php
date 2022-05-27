@@ -84,12 +84,14 @@
 
                       </form>
                       @else
-                      <div class="btn btn-primary btn-flat">
-                        <input   type="number" name="quantity" id="quantity" value="1">
-                      </div>
-                      <button class="btn btn-primary btn-lg btn-flat">
-                        <i class="fas fa-cart-plus fa-lg mr-2"></i>Add to Cart
-                        </button>
+                      <form action="{{ url('login') }}" method="GET">
+                        <div class="btn btn-primary btn-flat">
+                          <input   type="number" name="quantity" id="quantity" value="1">
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-flat">
+                          <i class="fas fa-cart-plus fa-lg mr-2"></i>Add to Cart
+                          </button>
+                      </form>
                       @endauth
     
                     {{-- <div class="btn btn-default btn-lg btn-flat">
