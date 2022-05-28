@@ -5,3 +5,7 @@ GRANT ALL PRIVILEGES ON * . * TO 'okta'@'localhost';
 FLUSH PRIVILEGES;
 
 https://www.niagahoster.co.id/blog/cara-install-laravel-di-ubuntu/
+
+
+chown -R www-data:www-data /var/www/html/E-P4TANI/  
+chmod -R 755 /var/www/html/E-P4TANI/
