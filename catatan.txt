@@ -6,6 +6,29 @@ FLUSH PRIVILEGES;
 
 https://www.niagahoster.co.id/blog/cara-install-laravel-di-ubuntu/
 
-
+ngerancang environment
 chown -R www-data:www-data /var/www/html/E-P4TANI/  
 chmod -R 755 /var/www/html/E-P4TANI/
+
+
+nano /etc/apache2/sites-available/laravel.conf
+
+<VirtualHost *:80>
+  ServerAdmin 103.169.7.159
+     DocumentRoot /var/www/html/E-P4TANI/public
+     ServerName 103.169.7.159
+
+     <Directory /var/www/html/E-P4TANI/public>
+        Options +FollowSymlinks
+        AllowOverride All
+        Require all granted
+     </Directory>
+
+     ErrorLog ${APACHE_LOG_DIR}/error.log
+     CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+composer install
+php artisan key:generate
+php artisan storage:link
