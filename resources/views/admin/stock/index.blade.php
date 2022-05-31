@@ -3,7 +3,7 @@
 @section('conten')
 <!-- baru -->
           <div class="container col-md-12">
-            <div class="card-body">
+            <div class="card-body table-responsive p-0">
               <table class="table table-bordered">
                 <thead class="table-dark">
                   <tr>
