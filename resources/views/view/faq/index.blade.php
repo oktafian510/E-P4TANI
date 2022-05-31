@@ -3,7 +3,9 @@
 <br><br><br><br>
  <!-- FAQ -->
  <div class="container">
-     <h1 >FAQ</h1>
+     <br>
+     <br>
+     <h3 >FAQ</h3>
      <br><br><br>
     <div class="accordion accordion-flush" id="accordionFlushExample">
         @foreach ($faq as $key=>$value)
