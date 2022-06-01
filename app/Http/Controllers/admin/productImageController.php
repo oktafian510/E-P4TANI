@@ -50,7 +50,7 @@ class productImageController extends Controller
         $addImage = new product_image;
         $addImage->code = $request->code;
         // // $addImage->image = $request->image;
-        $addImage->image = $request->file('image')->store('post-images');
+        $addImage->image = $request->file('image')->store('post-images/product');
         $addImage->save();
         // return redirect('adminProduct');
 

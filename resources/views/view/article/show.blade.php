@@ -20,7 +20,7 @@
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
                     </header>
                     <!-- Preview image figure-->
-                    <figure class="mb-4"><img class="img-fluid rounded" style="height: 50%" src="{{ asset('user/assets/img/article').'/'.$article->image }}" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" style="height: 50%" src="{{ asset('storage/'.$article->image) }}" alt="..." /></figure>
                     <!-- Post content-->
                     <section class="mb-5">
                         <p>

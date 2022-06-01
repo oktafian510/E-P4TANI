@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6 order-1 order-lg-2 hero-img">
-					<img src="{{ asset('user/assets/img/').'/'.$value->image }}" class="img-fluid animated" alt="">
+					<img src="{{ asset('storage/'.$value->image )}}" class="img-fluid animated" alt="">
 				</div>
                 @endforeach
 	    	</div>
@@ -41,7 +41,7 @@
                 <div class="col-lg-4 col-md-6" style="margin-bottom: 5%">
                     <div class="icon-box">
                     {{-- <div class="icon"><i class="bi bi-laptop"></i></div> --}}
-                    <img class="card-img-top" style="height:50%; margin-bottom:2%;" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." />
+                    <img class="card-img-top" style="height:50%; margin-bottom:2%;" src="{{ asset('storage/'.$value->image) }}" alt="..." />
                     <h4 class="title"><a href="">{{ $value->title }}</a></h4>
                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 					<div class="text-center"><a class="btn btn-outline-success btn-sm mt-auto" href="{{ url('article/'.$value->id.'/edit') }}">Read More →</a></div>

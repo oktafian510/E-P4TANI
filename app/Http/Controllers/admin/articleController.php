@@ -61,7 +61,7 @@ class articleController extends Controller
         $model->description = $request->description;
         $model->writer = $request->writer;
         $model->category = $request->category;
-        $model->image = $request->image;
+        $model->image = $request->file('image')->store('post-images/article');
         $model->save();
         return redirect('adminArticle');
     }
@@ -111,7 +111,11 @@ class articleController extends Controller
         $model->description = $request->description;
         $model->writer = $request->writer;
         $model->category = $request->category;
-        $model->image = $request->image;
+        if ($request->file('image')) {
+            $model->image = $request->file('image')->store('post-images/article');
+        } else {
+            $model->image = $request->image1;
+        }
         $model->save();
         return redirect('adminArticle');
     }

@@ -108,7 +108,7 @@ class memberController extends Controller
         $model->description = $request->description;
         $model->category = $request->category;
         if ($request->file('image')) {
-            $model->image = $request->file('image')->store('post-images/poster');
+            $model->image = $request->file('image')->store('post-images/member');
         } else {
             $model->image = $request->image1;
         }

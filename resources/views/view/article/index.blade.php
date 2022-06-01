@@ -10,7 +10,7 @@
             @foreach($articlePost as $key=>$value)
            
             <div class="card mb-4 {{ ($hide === "hide") ? 'collapse' : ' ' }}  ">
-                <a href="#!"><img class="card-img-top" style="height: 350PX;" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." /></a>
+                <a href="#!"><img class="card-img-top" style="height: 350PX;" src="{{ asset('storage/'.$value->image) }}" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted">{{ $value->updated_at }}</div>
                     <h2 class="card-title">{{ $value->title }}</h2>
@@ -26,7 +26,7 @@
                 <div class="col-lg-6">
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" style="height:50%;" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" style="height:50%;" src="{{ asset('storage/'.$value->image) }}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{ $value->updated_at }}</div>
                             <h2 class="card-title h4">{{ $value->title }}</h2>

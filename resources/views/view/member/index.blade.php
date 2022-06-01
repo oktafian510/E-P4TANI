@@ -13,7 +13,7 @@
       @foreach ($member as $key=>$value)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="member">
-            <img src="{{asset('user/assets/img/team').'/'.$value->image}}" alt="">
+            <img src="{{asset('storage/'.$value->image)}}" alt="">
             <h4>{{ $value->name }}</h4>
             <span>{{ $value->category }}</span>
             <p>
