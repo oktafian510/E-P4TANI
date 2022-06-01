@@ -74,6 +74,18 @@ class stokController extends Controller
     public function show($id)
     {
         //
+        $product = product::find($id);
+        $title = 'STOCKS';
+        $menu = 'Product';
+        $code = product::all();
+        $model = new stock;
+        return view('admin.stock.create', compact(
+            'model',
+            'title',
+            'code',
+            'product',
+            'menu'
+        ));
     }
 
     /**

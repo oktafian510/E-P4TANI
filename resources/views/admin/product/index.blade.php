@@ -30,7 +30,7 @@
                       <td>
                         <form class="text-center" action="{{ url('adminProduct/'.$value->id) }}" method="POST">
                           @csrf
-                          {{-- <a class="btn btn-success" href="{{ url('adminStock/'.$value->id.'/edit') }}"><i class="fas fa-plus"></i> Tambah Stok</a> --}}
+                          <a class="btn btn-success" href="{{ url('adminStock/'.$value->id) }}"><i class="fas fa-plus"></i> Tambah Stok</a>
                           <br> <br>
                           <a class="btn btn-success" href="{{ url('productImage/'.$value->id) }}"><i class="fas fa-image"></i> </a>
                           <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>

@@ -19,11 +19,8 @@
                                 <label for="code">Code</label>
                             </th>
                             <td>
-                            <select class="form-control" name="code" id="code">
-                                @foreach ($code as $key=>$value)
-                                <option>{{ $value->code }}</option>
-                                @endforeach
-                            </select>
+                            <input disabled type="text" value="{{ $product->code }}">
+                            <input hidden type="text" name="code" id="code" value="{{ $product->code }}">
                             </td>
                         </tr>
                         <tr>
@@ -52,7 +49,7 @@
                         </tr>
                     </tbody>
                     </table>
-                    <button class="btn btn-success" type="submit"><i class="fas fa-save"></i>SIMPAN</button>
+                    <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> SIMPAN</button>
                     
             </form>
     </div>
