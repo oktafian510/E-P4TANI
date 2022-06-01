@@ -121,7 +121,11 @@ class aboutController extends Controller
         $model->hp = $request->hp;
         $model->ig = $request->ig;
         $model->yt = $request->yt;
-        $model->image = $request->image;
+        if ($request->file('image')) {
+            $model->image = $request->file('image')->store('post-images/poster');
+        } else {
+            $model->image = $request->image1;
+        }
         $model->save();
         return redirect('adminAbout');
     }

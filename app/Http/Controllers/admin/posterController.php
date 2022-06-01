@@ -106,7 +106,11 @@ class posterController extends Controller
         $model = poster::find($id);
         $model->title = $request->title;
         $model->description = $request->description;
-        $model->image = $request->image;
+        if ($request->file('image')) {
+            $model->image = $request->file('image')->store('post-images/poster');
+        } else {
+            $model->image = $request->image1;
+        }
         $model->save();
         return redirect('adminPoster');
     }

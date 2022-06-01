@@ -9,7 +9,7 @@
     <div class="card">
       <div class="card-body row">
         <div class="col-5 text-center d-flex align-items-center justify-content-center">
-          <img style="width: 100%" src="{{ asset('user/assets/img/').'/'.$value->image }}" alt="">
+          <img style="width: 100%" src="{{ asset('storage/'.$value->image) }}" alt="">
         </div>
         <div class="col-7">
           <div class="form-group">
@@ -40,7 +40,7 @@
               @csrf
               <a class="btn btn-success" href="{{ url('adminAbout/'.$value->id.'/edit') }}"><i class="fas fa-edit"> Update</i></a>
               <input type="hidden" name="_method" value="DELETE">
-              <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> </button>
+              {{-- <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> </button> --}}
             </form>
           </div>
         </div>

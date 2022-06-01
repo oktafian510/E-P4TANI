@@ -57,7 +57,8 @@ class memberController extends Controller
         $model->name = $request->name;
         $model->description = $request->description;
         $model->category = $request->category;
-        $model->image = $request->image;
+        $model->image = $request->file('image')->store('post-images/member');
+
         $model->save();
         return redirect('adminMember');
     }
@@ -106,7 +107,11 @@ class memberController extends Controller
         $model->name = $request->name;
         $model->description = $request->description;
         $model->category = $request->category;
-        $model->image = $request->image;
+        if ($request->file('image')) {
+            $model->image = $request->file('image')->store('post-images/poster');
+        } else {
+            $model->image = $request->image1;
+        }
         $model->save();
         return redirect('adminMember');
     }

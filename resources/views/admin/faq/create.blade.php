@@ -1,19 +1,31 @@
 @extends('admin.index')
 @section('conten')
-        <div class="card-body">
 
-            <form action="{{ url('adminFaq') }}" method="POST">
-                @csrf
-                <input type="text" name="question" id="question">
-                <label for="question">question</label> <br>
-                <input type="text" name="answer" id="answer">
-                <label for="answer">answer</label><br>
-
-            
-            
-                <button type="submit">SIMPAN</button>
-            
-            </form>
-            
+<div class="card-body">
+    <form action="{{ url('adminFaq') }}" method="POST">
+        @csrf
+        <div class="row">
+            <div class="col-sm-6">
+            <!-- text input -->
+            <div class="form-group">
+                <label for="question">Question</label>
+                <input type="text" name="question"  id="question" class="form-control" placeholder="Please insert...">
+            </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-sm-6">
+            <!-- textarea -->
+            <div class="form-group">
+                <label for="answer">Answer</label>
+                <textarea name="answer"  id="answer" class="form-control" rows="3" placeholder="Please insert..."></textarea>
+            </div>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> SIMPAN</button>
+
+    </form>
+</div>
+
+       
 @endsection
