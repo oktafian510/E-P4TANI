@@ -56,7 +56,9 @@ class posterController extends Controller
         $model = new poster;
         $model->title = $request->title;
         $model->description = $request->description;
-        $model->image = $request->image;
+        // $model->image = $request->image;
+        $model->image = $request->file('image')->store('post-images/poster');
+
         $model->save();
         return redirect('adminPoster');
     }

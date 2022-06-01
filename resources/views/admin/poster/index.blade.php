@@ -10,7 +10,7 @@
             </div> --}}
             <div class="col-3 text-center">
               {{-- <img style="padding-top: 0.5%" src="{{ asset('admin/dist/img/user1-128x128.jpg') }}"  class=" img-fluid"> --}}
-              <img class="card-img-top" style="width:100%" src="{{ asset('user/assets/img/article').'/'.$value->image }}" alt="..." />
+              <img class="card-img-top" style="width:100%" src="{{ asset('storage/'.$value->image) }}" alt="..." />
             </div>
             
             <div class="col-7">
