@@ -47,12 +47,23 @@ class productImageController extends Controller
     {
         //
         // return $request
-        $model = new product_image;
-        $model->code = $request->code;
-        // // $model->image = $request->image;
-        $model->image = $request->file('image')->store('post-images');
-        $model->save();
-        return redirect('adminProduct');
+        $addImage = new product_image;
+        $addImage->code = $request->code;
+        // // $addImage->image = $request->image;
+        $addImage->image = $request->file('image')->store('post-images');
+        $addImage->save();
+        // return redirect('adminProduct');
+
+        $title = "PRODUCTS";
+        $menu = "page";
+        $model = product::find($request->idProduct);
+        $productImage = product_image::where('code', $model->code)->get();
+        return view('admin.product.image', compact(
+            'model',
+            'title',
+            'menu',
+            'productImage'
+        ));
     }
 
     /**
@@ -108,5 +119,23 @@ class productImageController extends Controller
     public function destroy($id)
     {
         //
+        $explode = explode(",", $id);
+        $idImage = $explode[0];
+        $code = $explode[1];
+        $idProduct = $explode[2];
+
+        $delete = product_image::find($idImage);
+        $delete->delete();
+
+        $model = product::find($idProduct);
+        $title = "PRODUCTS";
+        $menu = "page";
+        $productImage = product_image::where('code', $code)->get();
+        return view('admin.product.image', compact(
+            'model',
+            'title',
+            'menu',
+            'productImage'
+        ));
     }
 }

@@ -6,6 +6,7 @@
         <div class="col-5  d-flex ">
             <form action="{{ url('productImage') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <input type="text" hidden name="idProduct" id="idProduct" value="{{ $model->id }}">
                 <table class="table">
                     <thead class=" table-dark">
                         <tr>
@@ -62,26 +63,27 @@
         <div class="col-7  d-flex ">
             <table class="table">
                 <thead class=" table-dark">
-                    <th>
-                        <label scope="col" class="text-center">Image</label>
-                    </th>
+                    <tr>
+                        <td scope="col" class="text-center">Image</td>
+                    </tr>
                 </thead>
                 <tbody>
-                    @foreach($productImage as $key=>$value)
-                            <td>
-                                    <img class="card-img-top img-thumbnail" style="width: 200px" src="{{ asset('storage/'.$value->image) }}" alt="..." />
-                                    <form class="text-center" action="{{ url('adminProduct/'.$value->id) }}" method="POST">
+                    <tr>
+                        @foreach($productImage as $key=>$value)
+                                <td>
+                                    <form class="text-center" action="{{ url('productImage/'.$value->id.','.$value->code.','.$model->id) }}" method="POST">
                                         @csrf
+                                        <img class="card-img-top img-thumbnail" style=" height:100px;" src="{{ asset('storage/'.$value->image) }}" alt="..." />
+
                                         {{-- <a class="btn btn-success" href="{{ url('adminStock/'.$value->id.'/edit') }}"><i class="fas fa-plus"></i> Tambah Stok</a> --}}
                                         <br> <br>
-                                        <a class="btn btn-success" href="{{ url('productImage/'.$value->id) }}"><i class="fas fa-image"></i> </a>
-                                        <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                      </form>
-                            </td>
-                            
-                    @endforeach
+                                        <button type="submit" class="btn btn-danger" style="margin-top: -150px"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                                
+                        @endforeach
+                    </tr>
                 </tbody>
             </table>
             <img src="" alt="">
