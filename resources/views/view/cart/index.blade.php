@@ -13,6 +13,7 @@
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
+                <th>List</th>
                 <th>ID</th>
                 <th>image</th>
                 <th>Nama</th>
@@ -25,6 +26,11 @@
             <tbody>
             @foreach($cart as $key=>$value)
                 <tr>
+                    <td>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </td>
                     <td>{{ $key+1}}</td>
                     <td>{{ $value->image }}</td>
                     <td>{{ $value->nameProduct }}</td>
@@ -34,15 +40,14 @@
                     <td>
                       <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Update</a>
                       <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-                      <a class="btn btn-success"href="{{ url('cart/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Bayar</a>
-                      
+                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>                      
                     </td>
                 </tr>
             @endforeach
             </tbody>
           </table>
         </div>
+        <a class="btn btn-success"href="{{ url('cart/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Bayar</a>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
@@ -59,28 +64,17 @@
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>image</th>
-                <th>Nama</th>
-                <th>Size</th>
-                <th>Qty</th>
-                <th>Price</th>
-         
+                <th>ID Transaksi</th>
+                <th>Jumlah</th>
+                <th>Tanggal</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-            @foreach($cart as $key=>$value)
-                <tr>
-                    <td>{{ $key+1}}</td>
-                    <td>{{ $value->image }}</td>
-                    <td>{{ $value->nameProduct }}</td>
-                    <td>{{ $value->size }}</td>
-                    <td>{{ $value->quantity }}</td>
-                    <td>{{ $value->price }}</td>
-                   
-                </tr>
-            @endforeach
+          
 
+            <!-- Ini aku hapus -->
+            
             </tbody>
           </table>
         </div>
