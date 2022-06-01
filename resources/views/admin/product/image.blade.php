@@ -2,10 +2,11 @@
 @section('conten')
 <!-- baru -->
 <div class="container">
-    <div class="card-body">
+    <div class=" card-body row">
+        <div class="col-5  d-flex ">
             <form action="{{ url('productImage') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <table class="table col-sm-6">
+                <table class="table">
                     <thead class=" table-dark">
                         <tr>
                         
@@ -39,7 +40,7 @@
                                 <input type="text" disabled value="{{ $model->nameProduct }}" >
                             </td>
                         </tr>
-                       
+                        
                         <tr>
                             <th scope="row">
                                 <label for="image">image</label>
@@ -51,13 +52,42 @@
                                 </div>
                             </td>
                         </tr>
-                       
+                        
                     </tbody>
                     </table>
                     <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> SIMPAN</button>
                     
             </form>
+        </div>
+        <div class="col-7  d-flex ">
+            <table class="table">
+                <thead class=" table-dark">
+                    <th>
+                        <label scope="col" class="text-center">Image</label>
+                    </th>
+                </thead>
+                <tbody>
+                    @foreach($productImage as $key=>$value)
+                            <td>
+                                    <img class="card-img-top img-thumbnail" style="width: 200px" src="{{ asset('storage/'.$value->image) }}" alt="..." />
+                                    <form class="text-center" action="{{ url('adminProduct/'.$value->id) }}" method="POST">
+                                        @csrf
+                                        {{-- <a class="btn btn-success" href="{{ url('adminStock/'.$value->id.'/edit') }}"><i class="fas fa-plus"></i> Tambah Stok</a> --}}
+                                        <br> <br>
+                                        <a class="btn btn-success" href="{{ url('productImage/'.$value->id) }}"><i class="fas fa-image"></i> </a>
+                                        <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                      </form>
+                            </td>
+                            
+                    @endforeach
+                </tbody>
+            </table>
+            <img src="" alt="">
+        </div>
     </div>
+    
 </div>
 <!-- end baru -->
         

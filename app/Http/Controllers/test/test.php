@@ -10,10 +10,9 @@ use Illuminate\Http\Request;
 class test extends Controller
 {
     //
-    public function coba()
+    public function index()
     {
-        $member = member::limit(1)->get();
-        return $member;
+        return view('view.transaksi.index');
     }
     public function baru()
     {

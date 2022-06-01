@@ -67,10 +67,12 @@ class productImageController extends Controller
         $title = "PRODUCTS";
         $menu = "page";
         $model = product::find($id);
+        $productImage = product_image::where('code', $model->code)->get();
         return view('admin.product.image', compact(
             'model',
             'title',
-            'menu'
+            'menu',
+            'productImage'
         ));
     }
 
