@@ -44,6 +44,8 @@
                                     </th>
                                     <td>
                                         <input type="text" name="price" value="{{ $model->price }}" id="price">
+                                        <input  hidden type="text" name="idProduct" value="{{ $product->id }}" id="idProduct">
+
                                     </td>
                                 </tr>
                             </tbody>

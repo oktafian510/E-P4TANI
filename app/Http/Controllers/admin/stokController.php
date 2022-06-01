@@ -56,13 +56,27 @@ class stokController extends Controller
     public function store(Request $request)
     {
         //
+        $addStock = new stock;
+        $addStock->code = $request->code;
+        $addStock->size = $request->size;
+        $addStock->stock = $request->stock;
+        $addStock->price = $request->price;
+        $addStock->save();
+
+        $product = product::find($request->idProduct);
+        $title = 'STOCKS';
+        $menu = 'Product';
+        $code = product::all();
+        $dataStock = stock::where('code', $request->code)->get();
         $model = new stock;
-        $model->code = $request->code;
-        $model->size = $request->size;
-        $model->stock = $request->stock;
-        $model->price = $request->price;
-        $model->save();
-        return redirect('adminStock');
+        return view('admin.stock.create', compact(
+            'model',
+            'title',
+            'code',
+            'product',
+            'dataStock',
+            'menu'
+        ));
     }
 
     /**
@@ -78,12 +92,14 @@ class stokController extends Controller
         $title = 'STOCKS';
         $menu = 'Product';
         $code = product::all();
+        $dataStock = stock::where('code', $product->code)->get();
         $model = new stock;
         return view('admin.stock.create', compact(
             'model',
             'title',
             'code',
             'product',
+            'dataStock',
             'menu'
         ));
     }
@@ -97,12 +113,20 @@ class stokController extends Controller
     public function edit($id)
     {
         //
+        $explode = explode(",", $id);
+        $idStock = $explode[0];
+        $idProduct = $explode[1];
+
+        $product = product::find($idProduct);
+
+
         $title = "STOCKS";
         $menu = "page";
-        $model = stock::find($id);
+        $model = stock::find($idStock);
         return view('admin.stock.update', compact(
             'model',
             'title',
+            'product',
             'menu'
         ));
     }
@@ -117,13 +141,36 @@ class stokController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $model = stock::find($id);
-        $model->code = $request->code;
-        $model->size = $request->size;
-        $model->stock = $request->stock;
-        $model->price = $request->price;
-        $model->save();
-        return redirect('adminStock');
+        // $explode = explode(",", $id);
+        // $idStock = $explode[0];
+        // $code = $explode[1];
+        // $idProduct = $explode[2];
+        // return $request;
+
+        $editStock = stock::find($id);
+        $editStock->code = $request->code;
+        $editStock->size = $request->size;
+        $editStock->stock = $request->stock;
+        $editStock->price = $request->price;
+        $editStock->save();
+
+
+        $product = product::find($request->idProduct);
+        $title = 'STOCKS';
+        $menu = 'Product';
+        $code = product::all();
+        $dataStock = stock::where('code', $request->code)->get();
+        $model = new stock;
+
+
+        return view('admin.stock.create', compact(
+            'model',
+            'title',
+            'code',
+            'product',
+            'dataStock',
+            'menu'
+        ));
     }
 
     /**
@@ -135,8 +182,29 @@ class stokController extends Controller
     public function destroy($id)
     {
         //
-        $model = stock::find($id);
-        $model->delete();
-        return redirect('adminStock');
+
+
+        $explode = explode(",", $id);
+        $idStock = $explode[0];
+        $code = $explode[1];
+        $idProduct = $explode[2];
+
+        $deleteStock = stock::find($idStock);
+        $deleteStock->delete();
+
+        $product = product::find($idProduct);
+        $title = 'STOCKS';
+        $menu = 'Product';
+        $code = product::all();
+        $dataStock = stock::where('code', $product->code)->get();
+        $model = new stock;
+        return view('admin.stock.create', compact(
+            'model',
+            'title',
+            'code',
+            'product',
+            'dataStock',
+            'menu'
+        ));
     }
 }
