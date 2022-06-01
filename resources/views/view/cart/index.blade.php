@@ -10,25 +10,25 @@
 <br><br>
 <br><br>
 <div class="row">
+  <form action="{{ url('viewTransaksi/create') }}" method="POST">
     <div class="col-12">
       <div class="card">
-        <form action="">
           <div class="card-header">
             <h3 class="card-title">Table Cart</h3>
           </div>
             <!-- /.card-header -->
-            <div class="card-body table-responsive p-0" style="height: 300px;">
+            <div class="card-body table-responsive p-0" style="height: 500px;">
               <table class="table table-head-fixed text-nowrap">
                 <thead>
                   <tr>
-                    <th>List</th>
+                    <th style="width: 5%">List</th>
                     <th>ID</th>
                     <th>image</th>
                     <th>Nama</th>
                     <th>Size</th>
                     <th>Qty</th>
                     <th>Price</th>
-                    <th>aksi</th>
+                    <th style="width: 15%">aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,6 +51,8 @@
                             <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>
                             <input type="hidden" name="_method" value="DELETE">
                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-barcode"></i></a>
+
                           </form>
                         </td>
                     </tr>
@@ -58,12 +60,12 @@
                 </tbody>
               </table>
             </div>
-            <a class="btn btn-success"href="{{ url('cart/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Bayar</a>
+            <button type="submit"  class="btn btn-success" name="button"> Bayar</button>
             <!-- /.card-body -->
-        </form>
       </div>
         <!-- /.card -->
     </div>
+  </form>
 </div><br>
 <div class="row">
     <div class="col-12">

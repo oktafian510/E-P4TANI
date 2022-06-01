@@ -18,6 +18,7 @@ use App\Http\Controllers\test\test;
 use App\Http\Controllers\view\articleCommentController;
 use App\Http\Controllers\view\profilUserController;
 use App\Http\Controllers\view\viewCartController;
+use App\Http\Controllers\view\viewTransaksiController;
 use App\Models\about;
 use App\Models\article;
 use App\Models\member;
@@ -82,6 +83,7 @@ Route::resource('articleComments', articleCommentController::class);
 Route::resource('cart', viewCartController::class);
 Route::resource('profilUser', profilUserController::class);
 Route::resource('productImage', productImageController::class);
+Route::resource('viewTransaksi', viewTransaksiController::class);
 
 
 // Route::resource('adminAbout', aboutController::class);

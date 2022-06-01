@@ -77,7 +77,16 @@ class profilUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'PROFIL';
+        $about = about::limit(1)->get();
+        $profilUser = User::find($id);
+        // return $profilUser;
+        return view('view.profil.update', compact([
+            'title',
+            'about',
+            'profilUser'
+
+        ]));
     }
 
     /**
@@ -90,6 +99,27 @@ class profilUserController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        //
+        $model = User::find($id);
+        $model->name = $request->name;
+        $model->username  = $request->username;
+        $model->email  = $request->email;
+        $model->password  = auth()->user()->password;
+        $model->access  = auth()->user()->access;
+        $model->address  = $request->address;
+        $model->city  = $request->city;
+        $model->province  = $request->province;
+        $model->gender  = $request->gender;
+        $model->hp  = $request->hp;
+        if ($request->file('image')) {
+            $model->image = $request->file('image')->store('post-images/profil');
+        } else {
+            $model->image = $request->image1;
+        }
+        $model->status  = $request->status;
+        $model->save();
+        return redirect('profilUser/');
     }
 
     /**
