@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2022 at 08:49 PM
+-- Generation Time: Jun 01, 2022 at 09:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -408,7 +408,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `access`, `address`, `city`, `province`, `gender`, `hp`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (9, 'Oktafian Dwi Cahyono', 'E41191369', 'oktafian510@gmail.com', NULL, '$2y$10$5XAJkKwsXY3l0e9tUFkNvO.PYWpKLgdnL1VhWqqTn0TxRV.pCs9u6', '-', 'as', '-as', '-sa', '-sa', '-sa', 'post-images/profil/85hL1AYjdRPHY5EJtoKS4hkGuYVnu6ioiKZ75RFh.jpg', '-', NULL, '2022-05-17 19:23:06', '2022-06-01 11:37:35'),
-(12, 'Administrator', 'admin', 'admin@gmail.com', NULL, '$2y$10$V9UhEYg6NX0.AKCn/SvoSeGoxmAJBjYtIMV/TO6j.hnM8Fudtduzm', '-', '-', '-', '-', '-', '-', 'default.jpg', 'admin', NULL, '2022-05-27 16:03:16', '2022-05-27 16:03:16');
+(12, 'Administrator', 'admin', 'admin@gmail.com', NULL, '$2y$10$V9UhEYg6NX0.AKCn/SvoSeGoxmAJBjYtIMV/TO6j.hnM8Fudtduzm', 'admin', '-', '-', '-', '-', '-', 'default.jpg', 'admin', NULL, '2022-05-27 16:03:16', '2022-05-27 16:03:16');
 
 --
 -- Indexes for dumped tables
