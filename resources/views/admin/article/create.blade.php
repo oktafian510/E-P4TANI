@@ -1,5 +1,6 @@
 @extends('admin.index')
 @section('conten')
+
         <div class="card-body">
             <form action="{{ url('adminArticle') }}" method="POST">
                 @csrf
@@ -25,4 +26,7 @@
                 <button type="submit">SIMPAN</button>
             </form>
         </div>
+
+
+
 @endsection

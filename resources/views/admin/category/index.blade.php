@@ -1,35 +1,36 @@
 {{-- @extends('backEnd.layouts.master') --}}
 @extends('admin.index')
 @section('conten')
-        <!-- baru -->
+      <!-- baru -->
         <div class="container col-md-12">
             <div class="card-body table-responsive p-0">
               <table class="table table-bordered">
                 <thead class="table-dark">
                   <tr>
-                  <th>No</th>
-                  <th>Name Category</th>
-                  <th>Description</th>
-                  <th></th>
+                  <th style="width:5%">No</th>
+                  <th style="width:15%">Name Category</th>
+                  <th style="width:65%">Description</th>
+                  <th style="width:15%"></th>
                   </tr>
                 </thead>
-                @foreach ($datas as $key=>$value)
-                  <tr>
-                      <td>{{ $key+1 }}</td>
-                      <td>{{ $value->name }}</td>
-                      <td>{{ $value->description }}</td>
-                      <td>
-                        <form action="{{ url('adminCategory/'.$value->id) }}" method="POST">
-                          @csrf
-                          <a class="btn btn-primary" href="{{ url('adminCategory/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Update</a>
-                          <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-                        </form>
-                      </td>
-                      
-                  </tr>    
-              @endforeach
-                    
+                <tbody>
+                  @foreach ($datas as $key=>$value)
+                    <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $value->name }}</td>
+                        <td>{{ $value->description }}</td>
+                        <td>
+                          <form action="{{ url('adminCategory/'.$value->id) }}" method="POST">
+                            @csrf
+                            <a class="btn btn-primary" href="{{ url('adminCategory/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> </button>
+                          </form>
+                        </td>
+                        
+                    </tr>    
+                @endforeach
+                </tbody>      
               </table>
               <br>
             </div>

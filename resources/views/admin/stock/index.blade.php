@@ -12,27 +12,28 @@
                   <th>Size Product</th>
                   <th>Stock Product</th>
                   <th>Price Product</th>
-                  <th></th>
+                  <th style="width: 15%"></th>
                   </tr>
                 </thead> 
-                @foreach ($datas as $key=>$value)
-                  <tr>
-                      <td>{{ $key+1 }}</td>
-                      <td>{{ $value->code }}</td>
-                      <td>{{ $value->size }}</td>
-                      <td>{{ $value->stock }}</td>
-                      <td>{{ $value->price }}</td>
-                      <td class="text-right">
-                        <form action="{{ url('adminStock/'.$value->id) }}" method="POST">
-                          @csrf
-                          <a class="btn btn-primary" href="{{ url('adminStock/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Update</a>
-                          <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-                        </form>
-                      </td>
-                  </tr>
-                @endforeach
-                      <!-- /.card-body -->
+                <tbody>
+                  @foreach ($datas as $key=>$value)
+                    <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $value->code }}</td>
+                        <td>{{ $value->size }}</td>
+                        <td>{{ $value->stock }}</td>
+                        <td>{{ $value->price }}</td>
+                        <td class="text-right">
+                          <form action="{{ url('adminStock/'.$value->id) }}" method="POST">
+                            @csrf
+                            <a class="btn btn-primary" href="{{ url('adminStock/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> </button>
+                          </form>
+                        </td>
+                    </tr>
+                  @endforeach
+                </tbody>
               </table>
             </div>
           </div>
