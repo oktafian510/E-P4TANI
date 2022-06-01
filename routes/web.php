@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('view.product.show', compact(['title', 'about']));
 // });
 route::get('/', [viewController::class, 'home']);
-route::get('/test', [viewController::class, 'index']);
+route::get('/test', [test::class, 'index']);
 
 
 // route::get('/home', [viewController::class, 'home']);
