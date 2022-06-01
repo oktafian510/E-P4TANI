@@ -27,52 +27,84 @@
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="EditProfile">New message</h5>
+                      <h5 class="modal-title" id="EditProfile">Edit Profile</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
-                        <div class="ml-3">
-                          <label for="recipient-name" class="col-form-label">Recipient:</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                      <div class="row g-3 align-items-center">
+
+                        <div class="col-auto">
+                          <label for="Name" class="col-form-label">Name</label>
                         </div>
-                        <div class="ml-3">
-                          <label for="message-text" class="col-form-label">Message:</label>
-                          <textarea class="form-control" id="message-text"></textarea>
+                        <div class="col-auto">
+                          <input type="text" id="Name" class="form-control" aria-describedby="">
                         </div>
-                        <div class="ml-3">
-                          <label for="recipient-name" class="col-form-label">Recipient:</label>
-                          <input type="text" class="form-control" id="recipient-name">
+
+                        <div class="col-auto">
+                          <label for="Username" class="col-form-label">User Name</label>
                         </div>
-                        <div class="ml-3">
-                          <label for="message-text" class="col-form-label">Message:</label>
-                          <textarea class="form-control" id="message-text"></textarea>
+                        <div class="col-auto">
+                          <input type="text" id="Username" class="form-control" aria-describedby="">
                         </div>
-                        <div class="ml-3">
-                          <label for="recipient-name" class="col-form-label">Recipient:</label>
-                          <input type="text" class="form-control" id="recipient-name">
+
+
+                        <div class="col-auto">
+                          <label for="Email" class="col-form-label">Email</label>
                         </div>
-                        <div class="ml-3">
-                          <label for="message-text" class="col-form-label">Message:</label>
-                          <textarea class="form-control" id="message-text"></textarea>
+                        <div class="col-auto">
+                          <input type="Email" id="Email" class="form-control" aria-describedby="">
                         </div>
-                        <div class="ml-3">
-                          <label for="recipient-name" class="col-form-label">Recipient:</label>
-                          <input type="text" class="form-control" id="recipient-name">
+
+                        <div class="col-auto">
+                          <label for="Address" class="col-form-label">Address</label>
                         </div>
-                        <div class="ml-3">
-                          <label for="message-text" class="col-form-label">Message:</label>
-                          <textarea class="form-control" id="message-text"></textarea>
+                        <div class="col-auto">
+                          <input type="text" id="Address" class="form-control" aria-describedby="">
                         </div>
-                        <div class="ml-3">
-                          <label for="recipient-name" class="col-form-label">Recipient:</label>
-                          <input type="text" class="form-control" id="recipient-name">
+
+                        <div class="col-auto">
+                          <label for="City" class="col-form-label">City</label>
                         </div>
-                      </form>
+                        <div class="col-auto">
+                          <input type="text" id="City" class="form-control" aria-describedby="">
+                        </div>
+
+                        <div class="col-auto">
+                          <label for="Province" class="col-form-label">Province</label>
+                        </div>
+                        <div class="col-auto">
+                          <input type="text" id="Province" class="form-control" aria-describedby="">
+                        </div>
+
+
+                        <div class="col-auto">
+                          <label for="Gender" class="col-form-label">Gender</label>
+                        </div>
+                        <div class="col-auto">
+                          <input type="text" id="Gender" class="form-control" aria-describedby="">
+                        </div>
+
+                        <div class="col-auto">
+                          <label for="HP" class="col-form-label">HP</label>
+                        </div>
+                        <div class="col-auto">
+                          <input type="text" id="HP" class="form-control" aria-describedby="">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Pilih Foto</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+
+
+
+
+
+                      </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Send message</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                      <button type="button" class="btn btn-primary">Simpam</button>
                     </div>
                   </div>
                 </div>
