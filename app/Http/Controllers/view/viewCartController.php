@@ -22,7 +22,7 @@ class viewCartController extends Controller
         // $cart = cart::all();
 
         // return $category;
-        echo 'okta';
+
     }
 
     /**

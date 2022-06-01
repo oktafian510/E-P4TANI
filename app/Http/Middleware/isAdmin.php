@@ -20,8 +20,10 @@ class isAdmin
 
         //     abort(403);
         // }
-        if (!auth()->check() || auth()->user()->status === 'admin') {
+        if (!auth()->check() || auth()->user()->access === 'admin') {
             return redirect('/adminProduct');
+        } else {
+            return redirect('/');
         }
 
         // if (in_array($request->user()->status === 'admin')) {

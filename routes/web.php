@@ -71,18 +71,22 @@ Route::resource('product', viewProductController::class);
 
 
 
-Route::resource('adminFaq', faqController::class);
-Route::resource('adminPoster', posterController::class);
-Route::resource('adminArticle', articleController::class);
-Route::resource('adminAbout', aboutController::class);
-Route::resource('adminMember', memberController::class);
-Route::resource('adminCategory', categoryController::class);
-Route::resource('adminProduct', productController::class);
-Route::resource('adminStock', stokController::class);
+Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
+    Route::resource('adminFaq', faqController::class);
+    Route::resource('adminPoster', posterController::class);
+    Route::resource('adminArticle', articleController::class);
+    Route::resource('adminAbout', aboutController::class);
+    Route::resource('adminMember', memberController::class);
+    Route::resource('adminCategory', categoryController::class);
+    Route::resource('adminProduct', productController::class);
+    Route::resource('adminStock', stokController::class);
+    Route::resource('productImage', productImageController::class);
+});
+
+
 Route::resource('articleComments', articleCommentController::class);
 Route::resource('cart', viewCartController::class);
 Route::resource('profilUser', profilUserController::class);
-Route::resource('productImage', productImageController::class);
 Route::resource('viewTransaksi', viewTransaksiController::class);
 
 
