@@ -120,5 +120,8 @@ class viewCartController extends Controller
     public function destroy($id)
     {
         //
+        $model = cart::find($id);
+        $model->delete();
+        return redirect('cart/' . auth()->user()->id);
     }
 }

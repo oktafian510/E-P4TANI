@@ -56,11 +56,15 @@ class articleController extends Controller
     public function store(Request $request)
     {
         //
+        $category1 = $request->category;
+        $category = implode(",", $category1);
+
+        // return $category;
         $model = new article;
         $model->title = $request->title;
         $model->description = $request->description;
         $model->writer = $request->writer;
-        $model->category = $request->category;
+        $model->category = $category;
         $model->image = $request->file('image')->store('post-images/article');
         $model->save();
         return redirect('adminArticle');

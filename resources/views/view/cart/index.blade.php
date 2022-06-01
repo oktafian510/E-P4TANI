@@ -1,56 +1,68 @@
 @extends('view.index')
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
 @section('conten')
 <br><br>
 <br><br>
 <div class="row">
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Table Cart</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
-            <thead>
-              <tr>
-                <th>List</th>
-                <th>ID</th>
-                <th>image</th>
-                <th>Nama</th>
-                <th>Size</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-            @foreach($cart as $key=>$value)
-                <tr>
-                    <td>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      </div>
-                    </td>
-                    <td>{{ $key+1}}</td>
-                    <td>{{ $value->image }}</td>
-                    <td>{{ $value->nameProduct }}</td>
-                    <td>{{ $value->size }}</td>
-                    <td>{{ $value->quantity }}</td>
-                    <td>{{ $value->price }}</td>
-                    <td>
-                      <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Update</a>
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>                      
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-          </table>
-        </div>
-        <a class="btn btn-success"href="{{ url('cart/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Bayar</a>
-        <!-- /.card-body -->
+        <form action="">
+          <div class="card-header">
+            <h3 class="card-title">Table Cart</h3>
+          </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0" style="height: 300px;">
+              <table class="table table-head-fixed text-nowrap">
+                <thead>
+                  <tr>
+                    <th>List</th>
+                    <th>ID</th>
+                    <th>image</th>
+                    <th>Nama</th>
+                    <th>Size</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                @foreach($cart as $key=>$value)
+                    <tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="checkbox[]" id="checkbox[]" value="{{ $value->code }}" id="flexCheckDefault">
+                          </div>
+                        </td>
+                        <td>{{ $key+1}}</td>
+                        <td><img width="100px" class="rounded" src="{{ asset('storage/'.$value->image ) }}" alt=""></td>
+                        <td>{{ $value->nameProduct }}</td>
+                        <td>{{ $value->size }}</td>
+                        <td>{{ $value->quantity }}</td>
+                        <td>{{ $value->price }}</td>
+                        <td>
+                          <form class="text-center" action="{{ url('cart/'.$value->id) }}" method="POST">
+                            @csrf
+                            <a class="btn btn-primary" href="{{ url('adminProduct/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i></a>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                          </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-success"href="{{ url('cart/'.$value->id.'/edit') }}"><i class="fas fa-edit"></i>Bayar</a>
+            <!-- /.card-body -->
+        </form>
       </div>
-      <!-- /.card -->
+        <!-- /.card -->
     </div>
 </div><br>
 <div class="row">
@@ -83,5 +95,15 @@
       <!-- /.card -->
     </div>
 </div>
+<!-- jQuery -->
+<script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+{{-- <script src="{{ asset('admin/dist/js/demo.js') }}"></script> --}}
+
+
 
 @endsection

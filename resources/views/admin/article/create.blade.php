@@ -15,6 +15,23 @@
         </div>
         <div class="ro">
             <div class="col-sm-6">
+                <!-- checkbox -->
+                <div class="form-group">
+                  <div class="form-check">
+                        <div class="row">                   
+                            @foreach ($category as $key=>$value)
+                                <div class="col-3">
+                                    <input class="form-check-input" name="category[]" id="category[]" value="{{ $value->name }}" type="checkbox">
+                                    <label class="form-check-label">{{ $value->name }}</label> 
+                                </div>
+                             @endforeach
+                        </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        {{-- <div class="row">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="category">Category</label>
                     <select class="form-control" name="category" id="category" style="width: 100px">
@@ -24,7 +41,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col-sm-6">
             <!-- text input -->
