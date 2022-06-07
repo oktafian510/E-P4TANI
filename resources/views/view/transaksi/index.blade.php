@@ -66,7 +66,7 @@
               <input type="text" class="form-control" id="Id User" placeholder="" value="" required>
             </div>
 
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label for="username">Username</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -77,20 +77,62 @@
                 Username
               </div>
             </div>
-          </div>
+          </div> --}}
 
           <div class="mb-3">
-            <label for="address">Address</label>
+            <label for="address">code</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">size</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">price</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">jumlah</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">total</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">alamat</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">status</label>
             <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
             <div class="invalid-feedback">
               Please enter your shipping address.
             </div>
           </div>
   
-  
         
           <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
         </form>
       </div>
     </div>
+</div>
 @endsection

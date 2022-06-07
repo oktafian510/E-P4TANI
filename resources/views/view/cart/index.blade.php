@@ -6,11 +6,12 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
+
 @section('conten')
 <br><br>
 <br><br>
 <div class="row">
-  <form action="{{ url('viewTransaksi/create') }}" method="POST">
+  <form action="{{ url('viewTransaksi') }}" method="POST">
     <div class="col-12">
       <div class="card">
           <div class="card-header">
@@ -21,7 +22,7 @@
               <table class="table table-head-fixed text-nowrap">
                 <thead>
                   <tr>
-                    <th style="width: 5%">List</th>
+                    {{-- <th style="width: 5%"></th> --}}
                     <th>ID</th>
                     <th>image</th>
                     <th>Nama</th>
@@ -34,11 +35,11 @@
                 <tbody>
                 @foreach($cart as $key=>$value)
                     <tr>
-                        <td>
+                        {{-- <td>
                           <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="checkbox[]" id="checkbox[]" value="{{ $value->code }}" id="flexCheckDefault">
                           </div>
-                        </td>
+                        </td> --}}
                         <td>{{ $key+1}}</td>
                         <td><img width="100px" class="rounded" src="{{ asset('storage/'.$value->image ) }}" alt=""></td>
                         <td>{{ $value->nameProduct }}</td>
@@ -60,7 +61,7 @@
                 </tbody>
               </table>
             </div>
-            <button type="submit"  class="btn btn-success" name="button"> Bayar</button>
+            <a href="{{ url('viewTransaksi/create') }}"  class="btn btn-success" name="a"> Bayar</a>
             <!-- /.card-body -->
       </div>
         <!-- /.card -->
