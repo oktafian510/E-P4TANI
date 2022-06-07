@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\view;
 
 use App\Http\Controllers\Controller;
+use App\Models\about;
 use App\Models\article;
+use App\Models\cart;
 use App\Models\categorie;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,15 @@ class viewTransaksiController extends Controller
      */
     public function create()
     {
+
+        $title = 'PROFIL';
+        $about = about::limit(1)->get();
+        // return $profilUser;
+        return view('view.transaksi.index', compact([
+            'title',
+            'about',
+
+        ]));
     }
 
     /**
@@ -48,6 +59,7 @@ class viewTransaksiController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
