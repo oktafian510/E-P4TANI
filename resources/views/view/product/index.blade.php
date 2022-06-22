@@ -11,17 +11,28 @@
         <!-- promo -->
         <div id="Promo" class="carousel carousel- slide " data-bs-ride="carousel">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#Promo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              @foreach($poster as $key=>$value)
+              <button type="button" data-bs-target="#Promo" data-bs-slide-to="{{ $key }}" class="{{ ($key === 0) ? 'active' : ' ' }}"  aria-label="Slide{{ $value->id }}"></button>
+              @endforeach
+              {{-- <button type="button" data-bs-target="#Promo" data-bs-slide-to="0" class="active"  aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#Promo" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#Promo" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#Promo" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#Promo" data-bs-slide-to="2" aria-label="Slide 3"></button> --}}
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="1000">
+              @foreach($poster as $key=>$value)
+              <div class="carousel-item {{ ($key === 0) ? 'active' : ' ' }}" data-bs-interval="1000">
+                <img style="height: 300px" src="{{ asset('storage/'.$value->image) }}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>{{ $title }}</h5>
+                  <p>{{ $value->description }}</p>
+                </div>
+              </div>
+              @endforeach
+              {{-- <div class="carousel-item active" data-bs-interval="1000">
                 <img src="https://dummyimage.com/600x200/" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="1000">
@@ -37,14 +48,8 @@
                   <h5>Third slide label</h5>
                   <p>Some representative placeholder content for the third slide.</p>
                 </div>
-              </div>
-              <div class="carousel-item" data-bs-interval="1000">
-                <img src="https://dummyimage.com/600x200/" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Four slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
+              </div> --}}
+              
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#Promo" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
